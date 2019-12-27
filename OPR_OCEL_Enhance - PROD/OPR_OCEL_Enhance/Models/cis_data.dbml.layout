@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="cis_data">
+  <DataContextMoniker Name="/cis_dataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2b819016-f905-44e5-bbbc-4265a73f3290" isExpanded="false" absoluteBounds="1.625, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/cis_dataDataContext/TBL_M_CATEGORY_HANDBOOK_CI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5f1ad3a-ae60-4ce3-abc8-6d870cc5f7c7" absoluteBounds="1.6399999999999997, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d05c1f1-0368-4874-af7a-ee2bd8931016" isExpanded="false" absoluteBounds="4.75, 1, 2, 0.45">
+      <DataClassMoniker Name="/cis_dataDataContext/VW_LIST_HANDBOOK_CI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6059f179-d8c8-4417-9d2c-90142addd655" absoluteBounds="4.765, 1.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="528a5a23-bc77-4d3c-a272-1fd7ffcea8d2" isExpanded="false" absoluteBounds="1.625, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/cis_dataDataContext/TBL_R_HANDBOOK_CI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02eefea7-b31d-4e3f-ac38-777dc1bbce00" absoluteBounds="1.6400000000000001, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

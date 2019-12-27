@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "History Self Assesment | Report";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Report";
+    ViewBag.dashboardSmall = "History Self Assesment";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div id="grid"></div>
+<script src="~/Js/HistorySelfAssesment.js"></script>
+
+
+

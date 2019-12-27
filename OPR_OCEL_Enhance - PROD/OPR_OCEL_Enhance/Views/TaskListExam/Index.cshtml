@@ -1,0 +1,213 @@
+﻿
+<link rel="stylesheet" type="text/css" href="@ViewBag.SetURL/ContentLayout/css/datatables/dataTables.semanticui.min.css">
+<link rel="stylesheet" type="text/css" href="@ViewBag.SetURL/ContentLayout/css/datatables/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="@ViewBag.SetURL/ContentLayout/css/jquery.loadingModal.css">
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+        body::-webkit-scrollbar {
+            width: 0 !important;
+        }
+
+    body {
+        overflow: -moz-scrollbars-none;
+    }
+
+    body {
+        -ms-overflow-style: none;
+    }
+</style>
+@using OPR_OCEL_Enhance.Models.viewmodels.cpmd;
+@model IEnumerable<OPR_OCEL_Enhance.Models.viewmodels.cpmd.vmd_GetTask>
+@{
+    ViewBag.Title = "Pama Learning Exam";
+    Layout = "~/Views/Shared/_LayoutMasterPeserta.cshtml";
+}
+<style>
+    .table-condensed {
+        font-size: 15px;
+    }
+</style>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT">
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<input type="hidden" id="json_val_bag" value="@ViewBag.TaskJson" />
+<input type="hidden" id="input_isman" value="@ViewBag.Isman" />
+<input type="hidden" id="input_nrp" value="@ViewBag.NRP_EMP" />
+
+<h4 id="a4head"><i class="fa fa-list-ul" aria-hidden="true"></i> Task List Materi Wajib Diselesaikan</h4>
+<hr />
+<div id="div_details_exam" class="row" style="display:none">
+    <div class="col-lg-12">
+        <div class="card" style="width: 100%;">
+            <!--img class="card-img-top" src="..." alt="Card image cap"-->
+            <div class="card-body">
+                <h5 class="card-title">Informasi Ujian</h5>
+                <p class="card-text">Mohon dibaca informasi detail dari ujian yang akan anda pilih sebelum Anda mengerjakannya. Setalah Anda menekan tombol konfirmasi maka waktu akan berjalan. Kerjakan dengan cepat dan tepat. <b>Selamat Mengerjakan</b></p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="table-responsive-md">
+                            <table class="table table-striped table-hover table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>NRP</td>
+                                        <td><label id="lbl_nrp"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-left:5px">Distrik</td>
+                                        <td><label id="lbl_dstrct"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Posisi</td>
+                                        <td><label id="lbl_position"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tanggal Registrasi</td>
+                                        <td><label id="lbl_registered_date"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Departemen</td>
+                                        <td><label id="lbl_departemen"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Periode</td>
+                                        <td><label id="lbl_period"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pengacakan</td>
+                                        <td><label id="lbl_random"></label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="table-responsive-md">
+                            <table class="table table-striped table-hover table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td>Jenis Ujian</td>
+                                        <td><label id="lbl_jenis_ujian"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EGI</td>
+                                        <td><label id="lbl_egi"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jumlah Soal</td>
+                                        <td><label id="lbl_jml_soal"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Target Minimum</td>
+                                        <td><label id="lbl_min_value">65 %</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Waktu Pengerjaan</td>
+                                        <td><label id="lbl_duration_minutes"></label> Menit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sisa Waktu</td>
+                                        <td><label id="lbl_sia_waktu"></label> Menit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Soal</td>
+                                        <td><label id="lbl_jenis_soal"></label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-sm" id="btn_confirmation_exam">Konfirmasi</button>
+                <button class="btn btn-warning btn-sm" id="btn_cancel">Batal</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row" id="Mobile_examList">
+   @{int idx = 0;}
+    @foreach (var tasklist in (IEnumerable <vmd_GetTask>) ViewData["TaskList"])
+    {
+        @Html.Raw("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+        
+        <div class="card col-md-3">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>Peserta</td>
+                            <td>@tasklist.NRP_</td>
+                        </tr>
+                        <tr>
+                            <td>Nama Latihan</td>
+                            <td>@tasklist.MODULE_NAME_</td>
+                        </tr>
+                        <tr>
+                            <td>Generate Materi</td>
+                            <td>@tasklist.ASSIGN_DATE_</td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah Bab</td>
+                            <td>@string.Concat(tasklist.TASK_COUNT_," Bab")</td>
+                        </tr>
+                        <tr>
+                            <td>Diselesaikan</td>
+                            <td>@string.Concat(tasklist.J_UNLOCK_, " Bab")</td>
+                        </tr>
+                    </table>
+                    @{
+                        if (tasklist.TASK_STATUS_.Equals("PROGRESS"))
+                        {
+                            <button type="button" class="btn btn-primary btn-sm btn-block" onclick='GetTaskDetail("@string.Concat(idx,tasklist.TASK_ID_)")' style="width:100%"><i class="fa fa-book"></i>@tasklist.TASK_STATUS_</button>
+                        }else if (tasklist.TASK_STATUS_.Equals("LOCKED"))
+	                    {
+                            <button type="button" class="btn btn-danger btn-sm btn-block" onclick='GetTaskDetail(0)' style="width:100%" disabled><i class="fa fa-key"></i>@tasklist.TASK_STATUS_</button>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-success btn-sm btn-block" style="width:100%" onclick='GetTaskDetail("@string.Concat(idx,tasklist.TASK_ID_)")'><i class="fa fa-book"></i>@tasklist.TASK_STATUS_</button>
+                        }
+                      }
+                </div>
+            </div>
+        </div>
+        @Html.Raw("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        idx++;
+        }
+    </div>
+<div class="row" id="div_detail">
+    <div class="col-lg-12">
+        <button id="btn_back_list" type="button" class="btn btn-default btn-sm"><i class="fa fa-list" aria-hidden="true"></i> Kembali ke list</button>
+ 
+        <table id="table_detail" class="table">
+            <thead>
+                <tr>
+                    <th>STEP</th>
+                    <th>RECORDID</th>
+                    <th>TASK_ID</th>
+                    <th>MODULE_SUB_ID</th>
+                    <th>MODULE_ID</th>
+                    <th>EXAM_STATUS</th>
+                    <th>Materi Kompetensi</th>
+                    <th>Durasi Waktu</th>
+                    <th>Tanggal Generate</th>
+                    <th>File Materi</th>
+                    <th>Diselesaikan</th>
+                    <th>Sisa Waktu</th>
+                    <th>Update Terakhir</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<script src="@ViewBag.SetURL/ContentLayout/js/jquery.loadingModal.js"></script>
+<script type="text/javascript" src="@ViewBag.SetURL/Js/User/cpmd/TaskList.js"></script>

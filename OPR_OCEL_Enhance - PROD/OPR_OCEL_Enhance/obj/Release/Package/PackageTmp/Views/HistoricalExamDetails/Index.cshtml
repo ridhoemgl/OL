@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Report | Detail Hasil Ujian";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Report";
+    ViewBag.dashboardSmall = "Detail Hasil Ujian";
+}
+<style>
+    /* Page Template for the exported PDF */
+    .page-template {
+        font-family: "DejaVu Sans", "Arial", sans-serif;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+        .page-template .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            border-bottom: 1px solid #888;
+            color: #888;
+        }
+
+        .page-template .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border-top: 1px solid #888;
+            text-align: center;
+            color: #888;
+        }
+
+        .page-template .watermark {
+            font-weight: bold;
+            font-size: 400%;
+            text-align: center;
+            margin-top: 30%;
+            color: #aaaaaa;
+            opacity: 0.1;
+            transform: rotate(-35deg) scale(1.7, 1.5);
+        }
+
+    /* Content styling */
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    kendo-pdf-document .customer-photo {
+        border: 1px solid #dedede;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div id="gridHistory">
+
+</div>
+<div id="container_content">
+    <div class="row" id="row_h" style="display:none">
+        <div class="col-md-3">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-10 col-md-12">
+                        <h4>
+                            <label id="lbl_name"></label>
+                        </h4>
+                        <small>
+                            <i class="fa fa-location-arrow" aria-hidden="true"></i> SITE ASAL : <b><label id="lbl_distrik_asal"></label></b>
+                            , Jabatan : <label id="lbl_jabatan"></label>
+                        </small>
+                        <p>
+                            KODE REGISTRASI : <label id="lbl_registration_number"></label>
+                            <br />
+                            DEPT : <label id="lbl_departemen"></label>
+                            <br />
+                            EGI : <label id="lbl_egi"></label>
+                            <br />
+                            Jum. Pertanyaan : <label id="lbl_jQuest"></label>
+                            <hr />
+                            Diregistrasi : <label id="lbl_registered"></label>
+                            <br />
+                            Dikerjakan : <label id="lbl_actualdate"></label>
+                            <br />
+                            Selesai : <label id="lbl_finish"></label>
+                            <hr />
+                        </p>
+                        <br />
+                        <b></b>Nama Modul : <label id="lbl_ModuleName"></label></b>
+                        Nilai di Database : <label id="lbl_Examval"></label>
+                        <br />
+                        Prosentase Bobot : <b><label id="lbl_bobotNilai"></label> % </b>
+                        <br />
+                        Nilai Sebelum Bobot : <label id="lbl_beforeWeight"></label><br />
+                        <h3>Nilai Setelah Bobot : <b><label id="lbl_afterWeight"></label></b></h3>
+                        <br />
+                        Soal yang dikerjakan : <label id="lbl_percent"></label> %
+                        <hr />
+                        <button type="button" class="btn btn-success btn-block btn-sm" id="btn_BackAgain">
+                            <i class="fa fa-list" aria-hidden="true"></i> Kembali Ke List
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block btn-sm" id="btn_PrintPage">
+                            <i class="fa fa-print" aria-hidden="true"></i> Print Page
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+            <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;">
+
+            </div>
+            <br />
+            <div id="div_details_analize">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="tb_analyze_info">
+                        <thead>
+                            <tr>
+                                <td>Kompetensi</td>
+                                <td class="text-center" id="text_ubah">Jml. Soal Didapat</td>
+                                <td class="text-center">Jumlah Soal Benar</td>
+                                <td class="text-center" bgcolor="#ffcc66">Skor Aktual</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tbd_analize"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/RiwayatUjian.js"></script>
+<script type="x/kendo-template" id="page-template">
+    <div class="page-template">
+        <div class="header">
+            <div style="float: right">Page #: pageNum # of #: totalPages #</div>
+            Multi-page grid with automatic page breaking
+        </div>
+        <div class="watermark">KENDO UI</div>
+        <div class="footer">
+            Page #: pageNum # of #: totalPages #
+        </div>
+    </div>
+</script>

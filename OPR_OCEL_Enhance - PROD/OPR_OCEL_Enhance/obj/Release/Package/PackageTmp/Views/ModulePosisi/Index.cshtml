@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Mapping Module Posisi";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Module";
+    ViewBag.dashboardSmall = "Posisi";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+
+<div id="gridModulePosisi"></div>
+
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/ModulePosisi.js"></script>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_ONLINE_EXAM_OCEL" Class="DtClass_AppsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=jiepsqco413;Initial Catalog=DB_ONLINE_EXAM_OCEL;Persist Security Info=True;User ID=ocel_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_ONLINE_EXAM_OCELConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Menu_Aplikasi" Member="Menu_Aplikasis">
+    <Type Name="Menu_Aplikasi">
+      <Column Name="Primer" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Menu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Menu_link" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Urutan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu_GP" Member="Menu_GPs">
+    <Type Name="Menu_GP">
+      <Column Name="Primer" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GP_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Permission" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="D" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="E" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="R" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USER_ALL" Member="TBL_USER_ALLs">
+    <Type Name="TBL_USER_ALL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Autorize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Link" Member="View_Links">
+    <Type Name="View_Link">
+      <Column Name="link" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Profile" Member="View_Profiles">
+    <Type Name="View_Profile">
+      <Column Name="GP_ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_User_ID" Member="View_User_IDs">
+    <Type Name="View_User_ID">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KARY_NAMA" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="KARY_DIST" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="KARY_POS" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_District" Member="View_Districts">
+    <Type Name="View_District">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Distrik_Login" Member="View_Distrik_Logins">
+    <Type Name="View_Distrik_Login">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_Employee" Member="vw_Employees">
+    <Type Name="vw_Employee">
+      <Column Name="EMPLOYEE_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DIV_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GOLONGAN_ID" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="GOL_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="HIRE_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HIRE_YEAR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="POSITION_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EMP_TYPE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EMP_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="KODE_ULAP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Address_LotusNotes" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_HIRE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu" Member="Menus">
+    <Type Name="Menu">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu" Member="Menu1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_link" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Urutan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Permission" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="D" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="E" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="R" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="style_class" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USER" Member="TBL_USERs">
+    <Type Name="TBL_USER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Autorize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_LOG_APP" Member="TBL_T_LOG_APPs">
+    <Type Name="TBL_T_LOG_APP">
+      <Column Name="ID_LOGIN" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="LOG_DATE_TIME" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LOG_PROFILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REMARK" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LOGIN_BY" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="app.TBL_R_JOINED_DIVISION" Member="TBL_R_JOINED_DIVISIONs">
+    <Type Name="TBL_R_JOINED_DIVISION">
+      <Column Name="PID_DIV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DIV_NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Profile" Member="TBL_Profiles">
+    <Type Name="TBL_Profile">
+      <Column Name="GP_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Is_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Accept_by" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Create_OnDistrict" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="Create_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Update_by" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Update_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Update_OnDistrict" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="DivCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="app.View_GP_ID" Member="View_GP_IDs">
+    <Type Name="View_GP_ID">
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(91)" CanBeNull="true" />
+      <Column Name="ProDivisi" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Deskripsi_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="NAMA" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="IS_MANAGER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="app.cufn_get_gp_distrik" Method="cufn_get_gp_distrik" IsComposable="true">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="GP" Parameter="gP" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cufn_get_gp_distrikResult">
+      <Column Name="DISTRIK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="app.cufn_get_default_distrik" Method="cufn_get_default_distrik" IsComposable="true">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="cufn_get_default_distrikResult">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cufn_get_profile_divselect" Method="cufn_get_profile_divselect" IsComposable="true">
+    <Parameter Name="nrp" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="prodiv" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="cufn_get_profile_divselectResult">
+      <Column Name="GP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deskripsi" Type="System.String" DbType="VarChar(91)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

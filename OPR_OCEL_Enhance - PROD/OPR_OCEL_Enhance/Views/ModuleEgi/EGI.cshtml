@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Master Module EGI";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Master";
+    ViewBag.dashboardSmall = "EGI";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<button type="button" class='btn btn-primary' onclick="backTo()">&#x2190; kembali</button>
+<br /> <br />
+
+<div id="gridEGI"></div>
+
+<script>
+    function backTo() {
+        window.location = "@ViewBag.pathParent/ModuleEgi/Index";
+    }
+</script>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/MasterEGI.js"></script>

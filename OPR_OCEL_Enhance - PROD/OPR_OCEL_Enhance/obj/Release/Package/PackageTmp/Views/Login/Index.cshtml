@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@{
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+    Layout = null;
+}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width">
+    <link href="@ViewBag.pathParent/ContentLayout/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="@ViewBag.pathParent/ContentLayout/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="@ViewBag.pathParent/Content/gsdk-base.css" rel="stylesheet" type="text/css">
+
+    <script src="@ViewBag.pathParent/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="@ViewBag.pathParent/img/titlebar_icons.ico" />
+    <style>
+        body {
+            background: url(@ViewBag.pathParent/img/Foto_opt.jpg) no-repeat center center fixed;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .fade {
+            opacity: 1;
+        }
+
+        .modal-dialog {
+            margin-top:15%;
+        }
+
+        .modal-header {
+            height:50px;
+            background-color:#2CA8FF;
+        }
+
+        .modal-content {
+            width: 150%;
+            margin-left: -23%;
+        }
+
+        .custom {
+            width:100%;
+            border:1px solid #ccc;
+            box-shadow: 0 2px 7px rgba(0,0,0,0.2);
+            margin:0 2%;border-radius:5px;
+            padding:2%;
+        }
+        .title_cust {
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .list_style_number {
+            list-style-type: decimal;
+            margin-left: -7.5%;
+        }
+
+        .list_style_number>li {
+            margin-bottom:2px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="modal_add_pos" tabindex="9" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow:hidden;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <label style="font-weight: bold;font-size: 15px;">SEMANGAT PAGI !!!</label><br />
+                    <label>Berikut kami sampaikan petunjuk login untuk OCEL versi WEB</label><br />
+                    <label>OCEL terbagi menjadi 2 metode login :</label><br />
+                    <ul style="list-style-type:decimal;margin-left:-3%;">
+                        <li>Domain (Login Komputer)</li>
+                        <li>Database</li>
+                    </ul>
+
+                    <hr />
+                    <div style="display:inline-flex;">
+                        <div class="card custom">
+                            <label class="title_cust">Petunjuk Login dengan DOMAIN</label><br />
+                            <ul class="list_style_number">
+                                <li>Login menggunakan username pNRP</li>
+                                <li>Password menggunakan password komputer Anda</li>
+                            </ul>
+
+                        </div>
+                        <div class="card custom">
+                            <label class="title_cust">Petunjuk Login dengan Database</label><br />
+                            <ul class="list_style_number">
+                                <li>Login menggunakan username pNRP</li>
+                                <li>Password menggunakan menggunakan kombinasi 2 digit NRP terakhir + TANGAL LAHIR dengan format (yyyyMMdd)</li>
+                                <li>Pilihan Login Menggunkanan DATABASE</li>
+                            </ul>
+                            <hr />
+                            <label class="title_cust">Simulasi Login Database</label><br />
+                            <ul class="list_style_number">
+                                <li>NRP Anda : 61182334</li>
+                                <li>Tanggal Lahir Anda : 04 Mei 1996</li>
+                                <li>Pilihan Login Menggunkanan DATABASE</li>
+                                <li>Username di isi : p61182334</li>
+                                <li>Password Default : 3419960504</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <br />
+                    <label style="margin-top:2%;">Kombinasi ini ditujukan untuk meningkatkan keamanan dan kenyamanan pengguna Aplikasi ini.</label>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container set-full-height" style="height: 700px;">
+        <div class="image-container set-full-height" style="height: 700px; background-image: url(@ViewBag.pathParent/img/Foto_opt.jpg);">
+            <!--   Big container   -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <!--      Wizard container        -->
+                        <div class="wizard-container">
+                            <div class="card wizard-card ct-wizard-orange" id="wizard">
+                                <form action="@ViewBag.pathParent/login/getUser" method="POST" name="fom_login" id="fom_login">
+                                    <!--        You can switch "ct-wizard-orange"  with one of the next bright colors: "ct-wizard-blue", "ct-wizard-green", "ct-wizard-orange", "ct-wizard-red"             -->
+
+                                    <div class="wizard-header">
+                                        @*<img src="@ViewBag.pathParent/img/logo_2.png" />*@
+                                        <h3 style="font-family:Tahoma;">
+                                            PAMA Online Exam<br>
+                                        </h3>
+                                    </div>
+                                    <ul class="nav nav-pills">
+                                        <li class="active" style="width: 100%;"><a href=" #" data-toggle="tab"><center><strong>Login</strong></center> </a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="about">
+                                            @if (TempData["notice"] != null)
+                                            {
+                                                <div class="row" style="padding:0 50px;">
+
+                                                    <div class="alert alert-danger">
+                                                        <a class="close" data-dismiss="alert">×</a>
+                                                        <strong>Perhatian! </strong> @Html.Raw(TempData["notice"])
+                                                    </div>
+                                                </div>
+                                            }
+                                            <div class="row">
+                                                <div class="col-sm-4 col-sm-offset-1">
+                                                    <div class="picture-container">
+                                                        <div class="picture">
+                                                            <img src="@ViewBag.pathParent/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="">
+                                                            @*<input type="file" id="wizard-picture">*@
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">PNRP</label>
+                                                        <input type="text" name="pnrp" class="form-control" id="exampleInputEmail1" placeholder="PNRP...">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Kata Sandi</label>
+                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password...">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="pilihan_login">Pilihan Login</label>
+                                                        <select class="form-control" id="domain" name="domain">
+                                                            <option value="1">Domain Pamapersada</option>
+                                                            <option value="2">Database</option>
+                                                            <option value="3">1pama</option>
+                                                        </select>
+                                                    </div>
+                                                    @*<div class="form-group pull-right">
+
+                                                        </div>*@
+
+                                                    <div class="form-group">
+                                                        <input type="submit" class="btn btn-warning" name="finish" value=" Login ">
+                                                        <input type="reset" class="btn btn-default" name=" finish" value=" Cancel ">
+                                                        <a href="#" id="petunjuk_login" class="btn btn-primary btn-sm" style="font-weight:700;color:#000000;"><i class="fa fa-book"></i> Petunjuk Login</a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- wizard container -->
+                                </form>
+                            </div>
+                        </div><!-- end row -->
+                    </div> <!--  big container -->
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            $("body").css("overflow", "hidden");
+
+            $("#petunjuk_login").click(function () {
+
+                $('#modal_add_pos').modal('show');
+            });
+        </script>
+        <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/popper.js/popper.min.js"></script>
+        <script src="@ViewBag.pathParent/ContentLayout/js/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

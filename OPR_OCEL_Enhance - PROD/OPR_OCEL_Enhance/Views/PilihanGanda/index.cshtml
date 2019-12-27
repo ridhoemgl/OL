@@ -1,0 +1,443 @@
+﻿@{
+    ViewBag.Title = "Bank Soal | Pilihan Ganda";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Bank Soal";
+    ViewBag.dashboardSmall = "Pilihan Ganda";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<style type="text/css">
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+    #img-upload {
+        -o-object-fit: contain;
+        width: 80%;
+    }
+
+    .k-grid-header .center-header {
+        text-align: center;
+    }
+
+    .k-grid-header .wrap-header {
+        height: auto;
+        overflow: visible;
+        white-space: normal;
+    }
+</style>
+<div class="row">
+    <div class="col-md-3" id="bot-up">
+        <button class='btn btn-success btn-block' onclick='add_new_mapp()'><i class="fa fa-upload" aria-hidden="true"></i>Upload Soal Pilgan <b><small>(.xlsx)</small></b></button>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <div class="card" style="width: 100%; display:none" id="div-card">
+            <div class="card-body">
+                <button class='btn btn-success btn-block' onclick='clickDownload()'><i class="fa fa-download" aria-hidden="true"></i> Download Template Pilihan Ganda</button>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <div class="col-md-5">
+                        <label for="txt_tipepg" class="col-form-label">Tipe Soal<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input class="" type="text" id="txt_tipepg" style="width:235px">
+                        <input class="k-textbox" type="hidden" id="txt_mode">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5 pull-right">
+                        <label for="txt_modulpg" class="col-form-label">Modul<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input class="" type="text" id="txt_modulpg" style="width:235px">
+                        <input class="k-textbox" type="hidden" id="txt_mode">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5 pull-right">
+                        <label for="txt_submodulpg" class="col-form-label">Kompetensi<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input class="" type="text" id="txt_submodulpg" style="width:235px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5 pull-right">
+                        <label for="txt_egipg" class="col-form-label">EGI<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <input class="" type="text" id="txt_egipg" style="width:235px">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5 pull-right">
+                        <label for="soaltipe" class="col-form-label">Soal Untuk Tipe Ujian<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <select id="soaltipe"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5 pull-right">
+                        <label for="posisi" class="col-form-label">Posisi Jabatan yang Berkaitan<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-7">
+                        <select id="posisi"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default ">
+                            <div class="panel-body clearfix">
+                                <h6>Masukkan File Excel (.xlsx)</h6>
+                                <input type="file" id="fl_SoalPG" name="fl_SoalPG" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <a href="#" id="back_to"><i class="fa fa-th" aria-hidden="true"></i> Kembali</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card" style="width: 100%" id="div-card2">
+            <div id="gridTempt"></div>
+        </div>
+    </div>
+</div>
+<div class="row" id="filter">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_MODUL">Pilih Modul Soal</label>
+            <select id="S_MODUL" class="select2" data-width="100%">
+                <option disabled selected>Pilih Modul</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_SUBMODUL">Pilih Kompetensi Soal</label>
+            <select id="S_SUBMODUL" class="select2">
+                <option disabled selected>Pilih Kompetensi</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_TYPE">Jenis Soal Ujian</label>
+            <select id="S_TYPE" class="select2"></select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="S_CERT">&nbsp;</label>
+            <button type="button" id="btn_view" class="btn btn-default btn-md"><i class="fa fa-search"></i> SEARCH &amp; LOCK</button>
+        </div>
+    </div>
+</div>
+<br /><br />
+<div id="gridPilgan"></div>
+<div class="modal fade bd-example-modal-lg" id="modal-editor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="modal_close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Perubahan Konten Master Soal</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <b>Modul Dipilih</b>
+                    </div>
+                    <div class="col-md-4">
+                        <label id="lbl_modul"></label>
+                    </div>
+                    <div class="col-md-2">
+                        <b>IS Active</b>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="hidden" id="tbx_question_id" name="tbx_question_id" />
+                        <input type="hidden" style="width: 50px; text-align: center;" maxlength="2" id="tbx_maxtime" />
+                        <div class="checkbox">
+                            <label><input id="cbx_isactive" type="checkbox" value=0><font size="2em"> Aktif</font></label>
+                        </div>
+                    </div>
+                    <!--div class="col-md-2">
+                       <b>Is Active</b>
+                       </!div>
+                       <div class="col-md-2">
+                       <div class="checkbox">
+                           <label><input id="cbx_isactive" type="checkbox" value=0><font size="2em"> Aktif</font></label>
+                       </div>
+                       </div-->
+                    <div class="col-md-2">
+                        <b>Kompetensi</b>
+                    </div>
+                    <div class="col-md-4">
+                        <label id="lbl_submodul"></label>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Max Score</b>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" style="width: 50px; text-align: center;" maxlength="3" id="tbx_maxscore" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        Pertanyaan
+                    </div>
+                    <div class="col-md-12">
+                        <textarea id="txa_question" style="width:100%" rows=3></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8 form-group" style="text-align:right">
+                        <button class="btn btn-mini btn-danger" id="bt_add_answer"><i class="fa fa-plus green-colors"></i>Tambah Jawaban</button>
+                        <button class="btn btn-mini btn-success" id="bt_remove_answer"><i class="fa fa-minus red-colors"></i>Kurangi Jawaban</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                    <div class="col-md-12">
+                        <table id="tb" class="table">
+                            <thead>
+                                <tr class="tr-header">
+                                    <th style="width:5%;text-align:center;" class="text-center">Huruf</th>
+                                    <th style="width:10%" class="text-center">Benar</th>
+                                    <th style="width:85%">Deskripsi List Jawaban</th>
+                                </tr>
+                            </thead>
+                            <tr id="ans_row1">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet1">(A)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score1" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score1" value="0">
+                                </td>
+                                <td style="width:100%"><input type="text" class="in_answer" id="tbx_answer1" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row2">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet2">(B)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score2" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score2" value="0">
+                                </td>
+                                <td style="width:100%"><input type="text" class="in_answer" id="tbx_answer2" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row3">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet3">(C)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score3" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score3" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer3" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row4">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet4">(D)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score4" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score4" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer4" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row5">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet5">(E)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score5" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score5" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer5" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row6">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet6">(F)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score6" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score6" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer6" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row7">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet7">(G)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score7" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score7" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer7" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row8">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet8">(H)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score8" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score8" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer8" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row9">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet9">(I)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score9" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score9" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer9" style="width:100%"></td>
+                            </tr>
+                            <tr id="ans_row10">
+                                <td style="width:5%;text-align:center;"><label id="l_aphabet10">(J)</label></td>
+                                <td style="width:10%" align="center">
+                                    <input type="radio" class="in_score" id="tbt_score10" name="rb_score" value="0">
+                                    <input type="checkbox" class="cbx_score" id="cbx_score10" value="0">
+                                </td>
+                                <td style="width:85%"><input type="text" class="in_answer" id="tbx_answer10" style="width:100%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label>Unggah Gambar Soal</label>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <span class="btn btn-success btn-file">
+                                        Browse… <input type="file" name="FileUpload1" id="fileUpload" class="input-sm" accept="image/x-png,image/gif,image/jpeg">
+                                    </span>
+                                </span>
+                                <input type="text" id="lbl_file_upload" class="form-control" readonly>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger btn-file" id="remove_upload" disabled>
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="S_MCERT">Soal untuk Tipe Ujian</label>
+                                    <select name="S_MCERT[]" id="S_MCERT" data-width="100%" multiple></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="S_MCERT">Equipment Group Identifier (EGI)</label>
+                                    <select name="S_EGI" id="S_EGI" class="selectpicker" data-live-search="true" data-width="100%">
+                                        <option disabled selected>Pilih EGI</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="S_MPOSITION">Posisi Jabatan yang Berkaitan</label>
+                            <select name="S_MPOSITION[]" id="S_MPOSITION" data-width="100%" multiple></select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="text-align:center;">
+                        <img id='img-upload' src="@ViewBag.pathParent/question_image/no_image.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="$('#modal_close').click()">Close</button>
+                <button type="button" id="btn_save_question" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" id="md_temp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button id="modal_close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*@
+                <h4 class="modal-title" id="myModalLabel">Review Upload</h4>
+            </div>
+            <div class="modal-body">
+                <div id="gridUpload"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="cancelUpload()">Batal</button>
+                <button type="button" id="btn-finally-cancel" class="btn btn-primary" onclick="saveUpload()">Simpan Data</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/PilihanGAnda.js"></script>
+<script id="template" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return grid_add()"><span class="k-icon k-i-plus k-flip-h"></span> Tambah Data</a>
+</script>
+<script type="text/javascript">
+    dropdown_module();
+
+    $(document).ready(function () {
+        $(document).on('change', '.btn-file :file', function () {
+            var input = $(this),
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [label]);
+        });
+
+        $('.btn-file :file').on('fileselect', function (event, label) {
+
+            var input = $(this).parents('.input-group').find(':text'),
+                log = label;
+
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#img-upload').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#fileUpload").change(function () {
+            if (this.files[0].size > 280000) {
+                alert("Please upload file less than 250Kb. Thanks!!");
+                $('#img-upload').attr('src', "/question_image/no_image.jpg");
+                $(this).val('');
+            } else {
+                var fileType = this.files[0]["type"];
+                var ValidImageTypes = ["image/gif", "image/jpeg", "image/png"];
+                if ($.inArray(fileType, ValidImageTypes) < 0) {
+                    $(this).val('');
+                    alert("FIle yang Anda unggah tidak berupa gambar");
+                    $('#img-upload').attr('src', "/question_image/no_image.jpg");
+                } else {
+                    readURL(this);
+                }
+            }
+        });
+    });
+</script>

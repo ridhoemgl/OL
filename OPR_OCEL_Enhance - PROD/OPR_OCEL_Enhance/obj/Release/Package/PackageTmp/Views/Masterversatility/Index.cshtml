@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Master Modul Ujian";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Master";
+    ViewBag.dashboardSmall = "Modul Ujian";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="gridVersatility"></div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/MasterVersatility.js"></script>

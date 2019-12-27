@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Materi | CIS Study For Exam";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Materi";
+    ViewBag.dashboardSmall = "CIS Study For Exam";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<style>
+    #listview-context-menu {
+        padding: 0;
+        margin-bottom: -1px;
+        min-height: 300px;
+    }
+
+    .k-listview:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    #md_edit .modal-dialog {
+        -webkit-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+        top: 50%;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fa fa-file" aria-hidden="true"></i> Materi Pembelajaran</h5>
+                <p class="card-text">Upload Dokumen Anda di Form ini</p>
+                <form>
+                    <div class="form-group">
+                        <label for="drp-kategori">Kategori</label>
+                        <select id="drp-kategori" class="form-control" data-live-search="true" data-width="100%">
+                            <option disabled selected>Tentukan Kategori yang sesuai</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt_materi">Nama Materi</label>
+                        <input type="text" class="form-control" id="txt_materi" maxlength="50">
+                        <small id="emailHelp" class="form-text text-muted">Field ini diisi dengan nama materi yang akan diunggah</small>
+                    </div>
+                   <div class="form-group">
+                       <input type="file" id="file_upload" accept="application/pdf">
+                   </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+
+                            <label class="customcheck">
+                                Materi ini aktif
+                                &nbsp;<input type="checkbox" checked="checked" id="cbx_active">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block" id="btn_submitstudy"><i class="fa fa-floppy-o" aria-hidden="true"></i> Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-body">
+                <div id="grid_exampbook">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="md_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-pencil-square" aria-hidden="true"></i> Perbarui dokumen cis</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="PID_modaledit" />
+                <div class="form-group">
+                    <label for="drp-mkategori">Perbarui Kategori</label>
+                    <select id="drp-mkategori" class="form-control" data-live-search="true" data-width="100%">
+                        <option disabled selected>Tentukan Kategori yang sesuai</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Perbarui nama Materi</label>
+                    <input type="text" class="form-control" id="txt_mmateri" maxlength="50">
+                    <small id="emailHelp" class="form-text text-muted">Field ini diisi dengan nama materi yang akan diperbarui</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn_modalEdit">Perbarui</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="md_pdf_preview">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div id="pdf_review"></div>
+        </div>
+    </div>
+</div>
+<ul id="menu">
+    <li id="hapus">
+        <i class="fa fa-times" aria-hidden="true"></i> Remove
+    </li>
+    <li class="k-separator"></li>
+    <li id="update">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Update
+    </li>
+    <li id="read">
+        <i class="fa fa-book" aria-hidden="true"></i>  Read
+    </li>
+</ul>
+<script src="@ViewBag.pathParent/Js/CisStudyForExam.js"></script>

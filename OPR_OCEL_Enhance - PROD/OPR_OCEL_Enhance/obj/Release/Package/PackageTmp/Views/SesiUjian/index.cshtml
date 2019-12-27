@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Ujian | Sesi Ujian Online";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Ujian";
+    ViewBag.dashboardSmall = "Sesi Ujian";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<label  id="hide_button_bag" hidden>@ViewBag.hidebutton</label>
+<input type="hidden" id="gp_id" value="@ViewBag.GPID" maxlength="1" />
+
+<div id="gridsesiujian"></div>
+<div class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal_add_new">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus-circle" aria-hidden="true"></i> <label id="header_modal"></label></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="drp-exam-loc" class="col-form-label">Lokasi Ujian</label>
+                                <select id="drp-exam-loc" data-live-search="true">
+                                    <option disabled selected> Pilih Lokasi Ujian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="drp-certificator" class="col-form-label">Sertifikator <small><b/>Harus Dipilih</b></small></label>
+                                <select id="drp-certificator" name="drp-certificator" data-live-search="true" multiple>
+                                    <option disabled>Pilih Sertifikator Ujian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="drp-modul" class="col-form-label">Modul Ujian</label>
+                                <select id="drp-modul" data-live-search="true">
+                                    <option disabled selected> Pilih Modul</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="drp-qutype" class="col-form-label">Jenis Soal</label>
+                                <select id="drp-qutype" class="form-control" multiple>
+                                    <option disabled> Pilih Tipe Soal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="starting" class="col-form-label">Tanggal Awal Ujian</label>
+                                <input id="starting" style="width: 100%;" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="end" class="col-form-label">Batas Kadaluarsa Ujian</label>
+                                <input id="end" style="width: 100%;" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="sort-desc" class="col-form-label">Skor Minimal</label>
+                                    <input type="text" class="form-control" placeholder="0.0" id="txt_target" value="70" maxlength="4">
+                                </div>
+                            </div>
+                            <div class="col-md-7 ">
+                                <div class="form-group">
+                                    <label for="sort-desc" class="col-form-label">Nama Kegiatan / Ujian</label>
+                                    <input type="text" class="form-control" placeholder="Masukkan deskripsi singkat" id="sort-desc" maxlength="50">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="drp-ujian_type" class="col-form-label">Tipe Ujian</label>
+                                    <select id="drp-ujian_type" class="form-control">
+                                        <option disabled selected>Jenis Ujian</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Keterangan Tambahan</label>
+                                    <textarea class="small-editor" id="long_desc" rows="2" style="width:100%;height:30px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;" id="div_error">
+                        <strong>Error :</strong>
+
+                        <button type="button" class="close" onclick="$(this).parent().hide()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div id="message_error">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="BM_save_sesi">Simpan Perubahan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup_dlg_dua" style="display: none">
+
+    <div style="padding:50px">
+
+                <div id="gridTempt"></div>
+                <input type="hidden" class="form-control" id="event_id">
+           
+
+        @*<div class="col-md-4">
+            <div class="form-group">
+                <label for="sort-question_type" class="col-form-label">Question Type</label>
+                <input type="text" class="form-control" id="question_type" readonly>
+                <input type="hidden" class="form-control" id="event_id">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="time_exam" class="col-form-label">Time Exam</label>
+                <input type="text" class="form-control" placeholder="Time Exam" id="time_exam">
+            </div>
+        </div>*@
+        @*<div class="col-md-4">
+            <div class="form-group">
+              <button class="btn btn-danger" id="btn_cancel">Cancel</button>
+              <button class="btn btn-success" id="btn_save" onclick="save()">Submit</button>
+            </div>
+        </div>*@
+    </div>
+
+</div>
+
+<div id="example">
+    <div id="dialog">
+    </div>
+    <span id="undo" style="display:none" class="k-button hide-on-narrow">Click here to open the dialog</span>
+</div>
+<script id="add_btn_kendo" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return grid_add()"><span class="k-icon k-i-plus k-flip-h"></span>Tambah Data</a>
+</script>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/SesiUjian.js"></script>
+<script>
+    $("#long_desc").kendoEditor();
+</script>
+
+@**@

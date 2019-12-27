@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Administrasi Register Non DOmain";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Administrasi";
+    ViewBag.dashboardSmall = "Register Non Domain";
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div class="row">
+    <div class="col-md-12">
+        <div id="grid_opr">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/js/UserNonDomain.js"></script>

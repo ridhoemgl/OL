@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Mapping Posisi Aplikasi ke Ellipse";
+    ViewBag.dashboard = "Mapping";
+    ViewBag.dashboardSmall = "Posisi Applikasi ke Ellipse";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<style>
+    .select2-container {
+        z-index: 100000;
+    }
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+
+    <div class="row">
+    <div class="col-md-3">
+        <div class="card" style="width: 100%;display:none" id="div-card">
+            <div class="card-body">
+                <h5 class="card-title">Pilih Distrik</h5>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--select name="S_DISTRIK[]" id="S_DISTRIK" class="selectpicker" multiple data-width="100%" data-live-search="true"-->
+                        <select name="S_DISTRIK[]" id="S_DISTRIK" class="selectpicker" data-width="100%" data-live-search="true">
+                            <option disabled selected>List Distrik</option>
+                        </select>
+                        <br /><br />
+                        <div style="align-items:inherit">
+                            <button type="reset" class="btn btn-warning btn-sm" id="btn-finally-cancel">Batal</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="btn-finally-sumit">Simpan</button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="card" style="width: 100%" id="div-card2">
+            <div id="gridTempt"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="gridApptoEllipse"></div>
+
+    <div class="modal fade" id="modal_add_pos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Masukkan Posisi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="slct_poselipse">Posisi pada Ellipse</label>
+                        <select id="slct_poselipse" data-width="100%" data-live-search="true" multiple>
+                            <option disabled>Pilih Posisi dengan benar</option>
+                        </select>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label for="slct_posapp">Posisi pada App</label>
+                        <select id="slct_posapp" class="selectpicker" data-width="100%">
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="btn_save_tempt">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="template" type="text/x-kendo-template">
+        <a class="k-button" href="\#" onclick="return add_new_mapp()"><span class="k-icon k-i-plus k-flip-h"></span>Tambah Mapping</a>
+    </script>
+    <script id="tmb_posisi" type="text/x-kendo-template">
+        <a class="k-button" href="\#" onclick="return add_new_posisi()"><span class="k-icon k-i-plus k-flip-h"></span>Tambah Posisi</a>
+    </script>
+    <script type="text/javascript" src="@ViewBag.pathParent/Js/MappingApptoEllipse.js"></script>

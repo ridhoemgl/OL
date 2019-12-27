@@ -1,0 +1,302 @@
+﻿@{
+    ViewBag.Title = "Monitor Ujian | Registrasi Ujian";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Monitor Ujian";
+    ViewBag.dashboardSmall = "Registrasi Ujian";
+}
+
+<style>
+    .form-radio {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: inline-block;
+        position: relative;
+        background-color: #f1f1f1;
+        color: #666;
+        top: 5px;
+        height: 20px;
+        width: 20px;
+        border: 0;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-right: 7px;
+        outline: none;
+    }
+
+        .form-radio:checked::before {
+            position: absolute;
+            font: 13px/1 'Open Sans', sans-serif;
+            left: 6px;
+            top: 2px;
+            content: '\02143';
+            transform: rotate(40deg);
+        }
+
+    #grid {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        /* DO NOT USE !important for setting the Grid height! */
+    }
+
+
+    .form-radio:hover {
+        background-color: #f7f7f7;
+    }
+
+    .form-radio:checked {
+        background-color: #f1f1f1;
+    }
+
+    input[type][disabled] {
+        background-color: #f9f9f9;
+        color: #ddd;
+        cursor: default;
+    }
+
+        input[type][disabled] + label {
+            color: #999;
+            cursor: default;
+        }
+
+
+    label {
+        font: 300 16px/1.7 'Open Sans', sans-serif;
+        color: #666;
+        cursor: pointer;
+    }
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Posisi Jabatan</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="knd_drp_positionApp" style="width:100%;" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-3">
+                <label>Jenis Ujian</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="knd_drp_jenis_ujian" style="width:100%;" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <label>Lokasi Ujian</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="txtLocation" style="width:100%;" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button" id="btn_refresh0" class="btn btn-danger btn-block btn-sm"><i class="fa fa-flag" aria-hidden="true"></i> Data Non-Mapping</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" id="btn_refresh1" class="btn btn-success btn-block btn-sm"><i class="fa fa-search" aria-hidden="true"></i> Cari dan Refresh Data</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="@ViewBag.pathParent/ContentLayout/icon/excel.png" alt="Excel Logo" class="align-center img-50" />
+            </div>
+
+            <div class="align-center">
+                <button type="button" id="btn_show_modal_upload" class="btn btn-success btn-sm btn-block"><i class="fa fa-upload" aria-hidden="true"></i> Import Data Dari Excel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
+<div id="grid"></div>
+
+<div class="modal fade bd-example-modal-lg" id="modal_registration" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa fa-cogs" aria-hidden="true"></i> Data Karyawan Siap Diregistrasi
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 div_sesiujian">
+
+                        <div class="form-group" style="width:100%">
+                            <label for="slc_sesiujian">Sesi Ujian <b><small>Harus Dipilih</small></b></label>
+
+                            <select id="slc_sesiujian" data-width="100%" data-live-search="true">
+                                <option disabled selected>Pilih Sesi Ujian</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="txt_nrp" class="col-sm-5 col-form-label">NRP Karyawan</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_nrp" max="15">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_name" class="col-sm-5 col-form-label">Nama Karyawan</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_name" maxlength="80">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_distrik" class="col-sm-5 col-form-label">Distrik</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_distrik" maxlength="4">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_departement" class="col-sm-5 col-form-label">Departemen</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_departement">
+                            </div>
+                        </div>
+
+                        <div class="form-group row" style="display:none">
+                            <label for="txt_golongan" class="col-sm-5 col-form-label">Golongan</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_golongan" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_golongan" class="col-sm-5 col-form-label">Selft Exam</label>
+                            <div class="col-sm-7">
+                                <form>
+                                    <input type="radio" name="rb_selftassesment" value="1" id="radio-yes" class="form-radio"><label for="radio-yes">Ya</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="rb_selftassesment" value="0" id="radio-no" class="form-radio" checked><label for="radio-no">Tidak</label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label for="txt_nrp" class="col-sm-5 col-form-label">Kode Registrasi</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_registrationid">
+                            </div>
+                        </div>
+                        <div class="form-group row" style="display:none" hidden>
+                            <label for="txt_nrp" class="col-sm-5 col-form-label">Kelahiran</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_birtday">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_plandate" class="col-sm-5 col-form-label">Media Ujian</label>
+                            <div class="col-sm-7">
+                                <input type="hidden" readonly class="form-control" id="txt_plandate" maxlength="10" disabled>
+                                <form>
+                                    <input type="radio" name="rb_mediaujian" value="1" id="radio-pama" class="form-radio"><label for="radio-yes">1pama</label>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="rb_mediaujian" value="2" id="radio-web" class="form-radio" checked><label for="radio-no">Web</label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_plandate" class="col-sm-5 col-form-label">Posisi Jabatan</label>
+                            <div class="col-sm-7">
+                                <input type="text" readonly class="form-control" id="txt_postitle" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="txt_plandate" class="col-sm-5 col-form-label">Posisi App</label>
+                            <div class="col-sm-7">
+                                <select id="slc_poapp" data-live-search="true" data-width="100%">
+                                    <option disabled selected>Posisi Aplikasi</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="txt_plandate" class="col-sm-5 col-form-label">EGI <small class="text-danger"> (Pilih Sesi Dahulu)</small></label>
+                            <div class="col-sm-7">
+                                <select id="slc_egi" data-live-search="true" data-width="100%">
+                                    <option disabled selected>Pilih EGI</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12" id="div_materibaca" style="display:none">
+                        <div class="form-group row">
+                            <label for="txt_plandate" class="col-sm-2 col-form-label">Materi Baca</label>
+                            <div class="col-sm-10">
+                                <select id="slc_materibaca" data-width="100%" data-live-search="true">
+                                    <option disabled selected>Pilih materi baca yang relevan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 div_sesiujian">
+                        <div class="form-group" id="div_submodul" style="display:none">
+                            <label for="slc_submodul">Kompetensi</label>
+                            <select id="slc_submodul" data-live-search="true" data-width="100%" class="selectpicker">
+                                <option disabled selected>Pilih Kompetensi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-success" id="btn_regiter_exam">Registrasikan</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal_upload" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-window-maximize" aria-hidden="true"></i> Upload File</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body clearfix">
+                    <h6>Masukkan File Excel (.xlsx)</h6>
+                    <input type="file" id="fl_dataready" name="fl_SoalEssay" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                </div>
+                <br />
+                <div id="notification_div" hidden>
+                    <strong>INFORMASI</strong><br />
+                    <label id="lbl_status_upload"></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class='btn btn-warning btn-block' onclick='clickDownload()'><i class="fa fa-download" aria-hidden="true"></i>Download Template Data</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-kendo-tmpl" id="lbl_release">
+    <span class="fa fa-check-square"></span>&nbsp;&nbsp;Release
+</script>
+@*<script type="text/x-kendo-tmpl" id="lblUpdate">
+        <span class="fa fa-edit"></span>&nbsp;&nbsp;Edit
+    </script>*@
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/TransaksiRegistrasi.js"></script>

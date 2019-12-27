@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "DoExam";
+    Layout = "~/Views/Shared/_LayoutMasterPeserta.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<h2>DoExam</h2>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+

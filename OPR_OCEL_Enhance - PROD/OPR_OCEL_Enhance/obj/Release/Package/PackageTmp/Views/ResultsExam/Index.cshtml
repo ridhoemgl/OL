@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Report | Hasil Ujian";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Report";
+    ViewBag.dashboardSmall = "Hasil Ujian";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div class="row">
+    <div class="col-md-1">
+        <label>Posisi</label>
+    </div>
+    <div class="col-md-2">
+        <input type="text" id="txtPosisi" style="width:150px;" />
+    </div>
+
+    <div class="col-md-1">
+        <label>Jenis Ujian</label>
+    </div>
+    <div class="col-md-2">
+        <input type="text" id="txtJenisUjian" style="width:150px; background-color:#d5ebed" />
+    </div>
+
+    <div class="col-md-2">
+        <button type="button" id="btn_cari">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Cari Data
+        </button>
+    </div>
+</div>
+<hr />
+
+<div id="gridResultExam"></div>
+
+<script id="refreshdata" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return refreshdata()"><i class="fa fa-refresh" aria-hidden="true"></i> Perbarui Data</a>
+</script>
+<script id="download_btn" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return downloadexcelAll()"><i class="fa fa-download" aria-hidden="true"></i> Download All Data</a>
+</script>
+<script id="download_selected" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return downloadexcel()"><i class="fa fa-download" aria-hidden="true"></i> Download Data in parameter</a>
+</script>
+<script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery.toast.js"></script>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/ResultExam.js"></script>

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Controll | Copy To Mobile";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Controll";
+    ViewBag.dashboardSmall = "Copy To Mobil";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+    <!---Data Tables-->
+<link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/datatables.css">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table id="table_list" class="table">
+                <thead>
+                    <tr>
+                        <th>RECORD_ID</th>
+                        <th>REGISTRATION_ID</th>
+                        <th>EVENT_ID</th>
+                        <th>NRP</th>
+                        <th>Distrik</th>
+                        <th>Nama Peserta</th>
+                        <th>Kd. Register</th>
+                        <th>Modul</th>
+                        <th>Posisi Jabatan</th>
+                        <th>Diregistrasi</th>
+                        <th>Jenis Soal</th>
+                        <th>Jml. Soal</th>
+                        <th>Jml. Waktu</th>
+                        <th>Jenis Ujian</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/datatables.js"></script>
+<script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery.toast.js"></script>
+<script type="text/javascript" src="@ViewBag.pathParent/js/CopyToMobileData.js"></script>

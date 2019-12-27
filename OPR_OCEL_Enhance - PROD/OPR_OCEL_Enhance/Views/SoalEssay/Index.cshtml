@@ -1,0 +1,389 @@
+﻿
+@{
+    ViewBag.Title = "Bank Soal | Soal Essay";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Bank Soal";
+    ViewBag.dashboardSmall = "Soal Essay";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<style type="text/css">
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+    #img-upload {
+        -o-object-fit: contain;
+        width: 80%;
+    }
+
+    .swal2-container {
+        z-index: X;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-success btn-md" onclick="add_new_mapp()">Upload Dengan Excel</button>
+    </div>
+</div>
+<hr />
+<div class="row">
+
+    <div class="col-md-1">
+        <label>Posisi</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtPosisi" style="width:250px;" />
+    </div>
+    <div class="col-md-1">
+    </div>
+    <!------>
+    <div class="col-md-1">
+        <label>EGI</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtEgi" style="width:250px; background-color:#d5ebed" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-1">
+        <label>Module</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtModule" style="width:250px; background-color:#d5ebed" />
+    </div>
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-1">
+        <label>Jenis Ujian</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtJenisUjian" style="width:250px; background-color:#d5ebed" /><br /><br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">
+        <label>Jenis Soal</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtjenis_soal" style="width:250px; background-color:#d5ebed" />
+    </div>
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <button type="button" id="btn_searchEssay" class="btn btn-primary btn-block btn-sm" style="width:250px;"><i class="fa fa-book" aria-hidden="true"></i> Cari Soal Essay</button>
+    </div>
+</div>
+
+
+<hr />
+<div class="row" id="div_tab_container" hidden>
+    <section id="tabs" class="project-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav>
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Data Soal &amp; Editor Soal</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Ringkasan Data Soal</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div id="grid_soalessay"></div><br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="ChartTotal" style="width:100%">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <br />
+                                    <div id="grid_total" style="padding:0%">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<style>
+    .k-window div.k-window-content {
+        overflow: hidden;
+    }
+</style>
+
+<div id="popup_dlg_dua" style="width:800px; height:800px">
+
+    <h3 align="center">Masukkan Pertanyaan Essay Baru</h3>
+    </br></br>
+    <div class="container" style="width:800px;">
+
+        <div class="form-group row">
+            <div class="col-md-2 pull-right">
+                <label for="txt_modul" class="col-form-label">Modul<br><font size="1"></font></label>
+            </div>
+            <div class="col-md-3">
+                <input class="" type="text" id="txt_modul">
+                <input class="k-textbox" type="hidden" id="txt_mode">
+            </div>
+            <label for="txt_submodul" class="col-md-2 col-form-label">Sub Modul<br><font size="1"></font></label>
+            <div class="col-md-3">
+                <input class="" type="text" id="txt_submodul" style="width:180px">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 pull-right">
+                <label for="soaltipe" class="col-form-label">Soal Untuk Tipe Ujian<br><font size="1"></font></label>
+            </div>
+            <div class="col-md-3">
+                <select id="soaltipe" style="width:180px"></select>
+            </div>
+            <div class="col-md-2 pull-right">
+                <label for="posisi" class="col-form-label">Posisi Jabatan yang Berkaitan<br><font size="1"></font></label>
+            </div>
+            <div class="col-md-3">
+                <select id="posisi" style="width:180px"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="txt_egi" class="col-md-2 col-form-label">EGI<br><font size="1"></font></label>
+            <div class="col-md-3">
+                <input class="" type="text" id="txt_egi" style="width:180px">
+            </div>
+            <div class="col-md-2">
+                <span class="input-group-btn">
+                    <span class="btn btn-default btn-file" style="border:1px solid">
+                        Browse Image…<input type="file" name="FileUpload1" id="fileUpload" class="input-sm" accept="image/x-png,image/gif,image/jpeg">
+                    </span>
+                </span>
+            </div>
+            <div class="col-md-2 pull-right" hidden>
+                <label for="txt_waktu" class="col-form-label">Waktu<br><font size="1"></font></label>
+            </div>
+            <div class="col-md-3">
+                <input type="hidden" id="timepicker" value="0" style="width:185px">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-3">
+                Pertanyaan
+            </div>
+            <div class="col-md-12">
+                <textarea id="txt_question" style="width:90%; height:5%"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-3">
+                Jawaban Rekomendasi
+            </div>
+            <div class="col-md-12">
+                <textarea id="txt_answer" style="width:90%; height:5%"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-10">
+                <button class="btn btn-success pull-right" id="btn_save" onclick="save()">Submit</button>
+                <button class="btn btn-danger pull-right" id="btn_cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- POP UP MESSAGE -->
+<div id="popup_msg">
+    <div id="alert" role="alert">
+        <span id="alert-glyphicon" aria-hidden="true"></span> <span id="message"></span>
+    </div>
+    <center>
+        <button id="btn_close" class="k-button" style="width:120px">OK</button>
+    </center>
+</div>
+
+<div class="row">
+    <div class="col-md-11">
+        <div class="card" style="width: 100%; display:none" id="div-card">
+            <div class="card-body">
+                <button class='btn btn-success btn-block' onclick='clickDownload()'><i class="fa fa-download" aria-hidden="true"></i>Download Template Essay</button>
+            </div>
+            <div class="card-body">
+
+                <div class="form-group row">
+                    <div class="col-md-2">
+                        <label for="txt_modulxl" class="col-form-label">Modul<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="" type="text" id="txt_modulxl">
+                        @*<input class="k-textbox" type="hidden" id="txt_mode">*@
+                    </div>
+                    <div class="col-md-3">
+                        <label for="soaltipexl" class="col-form-label">Soal Untuk Tipe Ujian<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="soaltipexl"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2">
+                        <label for="txt_submodulxl" class="col-form-label">Sub Modul<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="" type="text" id="txt_submodulxl" style="width:185px">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="posisixl" class="col-form-label">Posisi Jabatan yang Berkaitan<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="posisixl"></select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2">
+                        <label for="txt_egixl" class="col-form-label">EGI<br><font size="1"></font></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="" type="text" id="txt_egixl" style="width:185px">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="jenissoalxl" class="col-form-label">Jenis Soal</label>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="jenissoalxl"></select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel-body clearfix">
+                            <h6>Masukkan File Excel (.xlsx)</h6>
+                            <input type="file" id="fl_SoalEssay" name="fl_SoalEssay" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <a href="#" id="back_to"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Kembali</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="card" style="width: 100%" id="div-card2">
+            <div id="gridTempt"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="md_temp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button id="modal_close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*@
+                <h4 class="modal-title" id="myModalLabel">Review Upload</h4>
+            </div>
+            <div class="modal-body">
+                <div id="gridUpload"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="cancelUpload()">Batal</button>
+                <button type="button" id="btn-finally-cancel" class="btn btn-primary" onclick="saveUpload()">Simpan Data</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/SoalEssay.js"></script>
+
+
+<script id="template" type="text/x-kendo-template">
+    <a class="k-button" href="\#" onclick="return grid_add()"><span class="k-icon k-i-plus k-flip-h"></span> Tambah Data</a>
+</script>
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+            });
+
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#fileUpload").change(function () {
+                if (this.files[0].size > 280000) {
+                    alert("Please upload file less than 250Kb. Thanks!!");
+                    $('#img-upload').attr('src', "/question_image/no_image.jpg");
+                    $(this).val('');
+                } else {
+                    var fileType = this.files[0]["type"];
+                    var ValidImageTypes = ["image/gif", "image/jpeg", "image/png"];
+                    if ($.inArray(fileType, ValidImageTypes) < 0) {
+                        $(this).val('');
+                        alert("FIle yang Anda unggah tidak berupa gambar");
+                        $('#img-upload').attr('src', "/question_image/no_image.jpg");
+                    } else {
+                        readURL(this);
+                    }
+                }
+            });
+        });
+</script>

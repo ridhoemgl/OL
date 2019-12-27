@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Analisa Kualitas Soal | Modul / Kometensi";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Analisa Kualitas Soal";
+    ViewBag.dashboardSmall = "Permodul Kometensi";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.baseurl" />
+<div class="row" id="filter">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_MODUL"><i class="fa fa-list-ol" aria-hidden="true"></i> Pilih Modul</label>
+            <select id="S_MODUL" class="select2" data-width="100%">
+                <option disabled selected>Pilih Modul</option>
+                <option value="0">Tampillan Semua Modul</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="S_CERT">&nbsp;</label>
+            <button type="button" id="btn_view" class="btn btn-default btn-md"><i class="fa fa-search"></i> SEARCH &amp; ANALYZE</button>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row" style="height: 230px">
+    <div class="col-lg-12" id="area_chart" hidden style="margin: 0px auto;">
+
+    </div>
+</div>
+<br />
+<div class="row" id="area_table" hidden>
+    <div class="col-lg-12" style="padding-left:4%;">
+        <table class="table table-bordered table-striped" id="tbl_analisa" style="width:100%">
+            <thead>
+                <tr>
+                    <td>Kode</td>
+                    <td>Keterangan Item</td>
+                    <td>Jumlah di bank soal</td>
+                    <td>Dipanggil oleh sistem</td>
+                    <td>Dijawab Benar</td>
+                    <td>% ACH Benar</td>
+                    <td>Dijawab Salah</td>
+                    <td>% ACH Salah</td>
+                </tr>
+            </thead>
+            <tbody id="tbd_tbl_analisa">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <div id="chart_a" style="height: 130px; width: 100%;">
+
+        </div>
+    </div>
+</div>
+
+
+<!--Data Tables-->
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/datatables.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/dataTablesemantic.min.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/semantic.min.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/Js/KualitasSoalbyMC.js"></script>

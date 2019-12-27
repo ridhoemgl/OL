@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Mapping Module EGI";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Mapping";
+    ViewBag.dashboardSmall = "Module EGI";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<button type="button" class='btn btn-primary btn-md' onclick="showEGI()"><i class="fa fa-users" aria-hidden="true"></i> Atur EGI</button>
+<br /> <br />
+
+<div id="gridModuleEGI"></div>
+
+<script>
+    function showEGI() {
+        window.location = "@ViewBag.pathParent/ModuleEgi/EGI";
+    }
+</script>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/ModuleEGI.js"></script>

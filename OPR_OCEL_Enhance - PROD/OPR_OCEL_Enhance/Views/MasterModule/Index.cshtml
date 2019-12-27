@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Master Module";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Master";
+    ViewBag.dashboardSmall = "Module";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="gridModule"></div>
+
+<div id="wnd_editor">
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Module</div>
+        <div class="col-md-4">
+            <input type="hidden" id="id_modid" />
+            <input type="text" id="id_modname" />
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="justify-content: center;">
+        <button id="btn_save" class="k-button" style="margin:10px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save</button>
+        <button id="btn_cancel" class="k-button" style="margin: 10px;"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+    </div>
+</div>
+
+<script src="~/Js/MasterModule.js"></script>

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.875, 11.25" name="DtClass_OcelEnch">
+  <DataContextMoniker Name="/DtClass_OcelEnchDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6b194ee3-a3e3-414e-8cd5-67c757bf3f35" isExpanded="false" absoluteBounds="12.375, 8, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_EGI_MAPPING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a0a4344-a85a-444f-90f0-58c645b987e0" absoluteBounds="12.39, 8.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a150758c-46c6-43da-9cad-f222e6e2ee21" isExpanded="false" absoluteBounds="7.625, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_MATRIX_COMPETENCY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4ceb061-8732-4322-8976-f1d9bff5137a" absoluteBounds="7.6400000000000006, 6.0850000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41dd904b-2d7c-4fd6-9fa2-7699a1a61299" isExpanded="false" absoluteBounds="9.75, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_APPLICATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d31879d-1968-46ef-b333-f4f73fcc0131" absoluteBounds="9.765, 3.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1dc3891-1976-43f2-b525-09242899a682" isExpanded="false" absoluteBounds="12.375, 8.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_EXAM_STATUS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="139cc302-8bde-4018-ae40-f2ba6c50f6cc" absoluteBounds="12.39, 9.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="629d1b64-53cc-4a9e-bf4f-08fb2b6fd1d1" isExpanded="false" absoluteBounds="9.75, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_PACKAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a840ef73-8860-4cc2-9de5-0b8e8be9caf3" absoluteBounds="9.765, 2.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e82cd80-8b64-499e-8177-6660e366a746" isExpanded="false" absoluteBounds="9.75, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_QUESTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06b21bb3-5424-4457-a60d-5b64c35d7804" absoluteBounds="9.765, 1.0850000000000009, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6b86fad-898b-42b1-a719-5c9fb798934d" isExpanded="false" absoluteBounds="9.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_QUESTION_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a45fb65f-0874-4e49-a4ae-0159988b430b" absoluteBounds="9.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8bc48b4-43ca-41c6-9f28-d4c77e1acefe" isExpanded="false" absoluteBounds="12.375, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_STUDENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1507c334-6ae8-4c06-b4d3-9405cc921711" absoluteBounds="12.39, 2.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74ccf905-f9c9-4afd-9b70-e4a284f30626" isExpanded="false" absoluteBounds="12.375, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_TEST_CENTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87e45843-091b-4c3a-8436-e79beb2d3e09" absoluteBounds="12.39, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8648f09-3816-469f-9f5b-7f875dfd592d" isExpanded="false" absoluteBounds="12.375, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_REGISTRATION_BACKUP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abcc87bd-c265-46d4-a67a-7ae62e852109" absoluteBounds="12.39, 4.085, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f2d97d0-a42c-4c51-b225-5f03ee83281e" isExpanded="false" absoluteBounds="14.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_REGISTRATION_NUMBER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d8532cb-e5b5-4be7-a716-9315200e3d79" absoluteBounds="14.64, 0.96000000000000085, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6f0dafe-e97c-4eec-9b08-36942a6716a9" isExpanded="false" absoluteBounds="12.375, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_RESULT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22f1fdec-7698-48a3-bd7b-4bdfb500a379" absoluteBounds="12.39, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e2465e2-9bf3-4e88-8a7a-5f41dc35b899" isExpanded="false" absoluteBounds="12.375, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_SUKO_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="042fe1c5-af0c-46d9-9055-8c18425633b9" absoluteBounds="12.39, 4.7100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d92c7b74-5a5a-4e63-90d3-833104bd774e" isExpanded="false" absoluteBounds="9.75, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_EGI_VERSATILITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d78a6691-9724-47fd-ad0f-5c8494cf1a1a" absoluteBounds="9.765, 4.8350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d6114cb-e308-4a78-a9a5-75dae6f4516c" isExpanded="false" absoluteBounds="12.375, 3, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_GOLONGAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a59d5d80-c867-47bc-b633-55f642c9e5e2" absoluteBounds="12.39, 3.4600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9bea185-0026-48ab-a160-e0b1b992cb07" isExpanded="false" absoluteBounds="12.375, 6.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_MOR_CERTIFICATOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6064915d-c860-4af7-8e0c-387d6f45a99b" absoluteBounds="12.39, 6.5850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="091721b3-4abf-4338-8bef-662d336f1a4f" isExpanded="false" absoluteBounds="12.375, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_VERSATILITY_SUB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8510043-3f85-4c3b-bd68-223024279c31" absoluteBounds="12.39, 2.8350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2754c2a-35ce-492f-bce7-ad3a7f980a8c" isExpanded="false" absoluteBounds="7.625, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_SUKO_" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89a46d7c-dcd8-4769-a134-0f4a6111c42c" absoluteBounds="7.6400000000000006, 1.7100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4720b1ba-3689-4903-9d43-69697394ff8c" isExpanded="false" absoluteBounds="0.5, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_R_TEST_CENTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3b81b2b-7b60-4209-b5f9-642ca46f2099" absoluteBounds="0.51500000000000012, 2.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4c55149-2456-45a9-9816-db69c6df2a0c" isExpanded="false" absoluteBounds="12.375, 7.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_MODULE_EGI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc55f0d3-813b-43de-997a-10a74a555acd" absoluteBounds="12.39, 7.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c871c2a2-b933-4d3e-905b-2f400fcfc2c7" isExpanded="false" absoluteBounds="9.75, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_EGI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c5c81c6-b05c-40a6-9b43-304414a4d84e" absoluteBounds="9.765, 6.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdb8bed6-76a1-44eb-a98f-f34973d53669" isExpanded="false" absoluteBounds="0.5, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_MODULE_EGI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b94cb6a2-46df-4810-bd69-2ba4d3e3c257" absoluteBounds="0.51499999999999968, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df366909-df2e-4d5c-957b-d44be5ea5cf0" isExpanded="false" absoluteBounds="0.5, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_DISTRIK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6e7be01-5aca-44b2-8bfb-4aa2910012da" absoluteBounds="0.51499999999999968, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee468357-2bf0-467e-af55-5fec5b8d3e03" isExpanded="false" absoluteBounds="9.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_POSITION_APP_ELLIPSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6671ba4d-4e3c-4412-bd77-3b5ffd960830" absoluteBounds="9.765, 6.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00c3c9e4-1050-429c-a2a7-5f9dfaccdb87" isExpanded="false" absoluteBounds="0.5, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f87e698-aecc-4fb8-a5a1-3ac23630654e" absoluteBounds="0.51499999999999968, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="523330dc-8ce6-4531-8a52-ef37de4c3d51" isExpanded="false" absoluteBounds="9.75, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_COMPETENCY_MATRIX" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98365dc7-7594-49ad-aa5f-fca0cbf8fc79" absoluteBounds="9.765, 8.71, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e19a0042-667b-4e15-b77d-8d238c76226a" isExpanded="false" absoluteBounds="0.5, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_MODULE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82f7d0cf-2249-4d74-8f50-7527ba039b5c" absoluteBounds="0.51499999999999968, 5.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cfc4070b-170e-4142-9b90-bed154ff65e8" isExpanded="false" absoluteBounds="12.375, 5.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_MODULE_POSITION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94f44765-5bcb-46bb-9a35-09b11a9e2d7c" absoluteBounds="12.39, 5.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07953d5f-23f6-4b65-8b6a-1d0a019f24b2" isExpanded="false" absoluteBounds="0.5, 6, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_EMPLOYEE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="122e86f4-663b-4066-8dfb-81dc79a70e03" absoluteBounds="0.51499999999999968, 6.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04228999-1b30-4368-a601-a572f4fbe37e" isExpanded="false" absoluteBounds="0.5, 4, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_T_COMPETENCY_MATRIX" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56fd0a14-d17f-4989-ad98-73f9d0bb691c" absoluteBounds="0.51499999999999968, 4.46, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8575b7d-c4ca-4972-adf1-ad2d57492f98" isExpanded="false" absoluteBounds="0.5, 6.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_MODULE_SUB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="41e3382d-d20e-439d-8a8e-c7b7f45494af" absoluteBounds="0.51500000000000012, 7.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0c1dc30-3acd-4907-b676-8bd616c8b0fc" isExpanded="false" absoluteBounds="2.75, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_SUB_MODUL_DIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f9b42d1-dfbc-41b6-8973-feaa6907d086" absoluteBounds="2.7650000000000006, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffe33a2e-405e-4d60-8586-8348bbc01eab" isExpanded="false" absoluteBounds="7.625, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_EMPLOYEE_OTHER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="947ca5a3-e0c4-4c66-8d09-162e885604f0" absoluteBounds="7.6400000000000006, 8.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab98fd4a-9b8a-4b86-b8a2-6916ce59c7ca" isExpanded="false" absoluteBounds="7.625, 8.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_JENIS_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eb1ee59-46a1-4a32-8260-8da6252cbbbc" absoluteBounds="7.6400000000000006, 9.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59d2e990-6aa7-46c2-90ee-eefeb15e087c" isExpanded="false" absoluteBounds="2.75, 6.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/vw_setWaktu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cabda0d-a015-46b3-9ff6-e627b426a146" absoluteBounds="2.7650000000000006, 7.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23bbecf8-40d8-42e9-ad38-bdd612c09acb" isExpanded="false" absoluteBounds="2.75, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/vw_kelompokSoal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="946635e8-e77f-4541-aff8-b0a28bd0d23a" absoluteBounds="2.7649999999999997, 2.585, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e34bdac6-ddcb-4481-9a6f-c4a55a7c717c" isExpanded="false" absoluteBounds="7.625, 7.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_SETTING_WAKTU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d332d044-c9a2-427d-8bcd-e5cfbe601ff5" absoluteBounds="7.6400000000000006, 8.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fcaffcf-ddd9-4fa3-81d9-53728727ecd8" isExpanded="false" absoluteBounds="2.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_CERTIFICATOR_LOCATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfc04fc7-0947-4b39-8477-13769106758b" absoluteBounds="2.7649999999999997, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d32edc6-f1d7-4ce6-a789-aab12cdabd06" isExpanded="false" absoluteBounds="2.75, 4.75, 2.125, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_TMP_MAPPING_POSISITOELLIPSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58438214-1dbc-4718-b721-b2c06a065e40" absoluteBounds="2.7650000000000006, 5.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5d62c05-747d-478e-b6d7-771e47aa2c9b" isExpanded="false" absoluteBounds="0.5, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_POSITION2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f59060e-d1eb-4cda-b74f-e0dffacfa9f2" absoluteBounds="0.51500000000000057, 5.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e68feaa-de82-43b5-87af-c6ddde4183d1" isExpanded="false" absoluteBounds="2.75, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_POSISI_APP_TO_ELLIPSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85d1b239-879f-4998-91d3-0bf7aacf3229" absoluteBounds="2.7649999999999997, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4710a25-a6de-452a-b9b6-63e3f771d76e" isExpanded="false" absoluteBounds="5, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_STUDY_FOR_EXAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e9b0d2c-95f3-4181-91d4-60884541d7ad" absoluteBounds="5.0150000000000006, 1.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf2b7080-6ee1-4a2a-abd6-27f7707e3748" isExpanded="false" absoluteBounds="7.625, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_CERT_TYPE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf8827d8-2202-4092-82c2-0e25ce5d53bc" absoluteBounds="7.6400000000000006, 4.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a426ad0d-cb82-4eee-9d85-6a92cd2c7f25" isExpanded="false" absoluteBounds="7.625, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_POSITION_APP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05c4ce04-ab91-4bed-a854-ae98003160cb" absoluteBounds="7.6400000000000006, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="216a1df3-71ef-4c5b-9cd9-2251e26431d4" isExpanded="false" absoluteBounds="9.75, 8.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_M_KELOMPOK_SOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aad7a1cf-6acf-4787-8d7a-7e7187c1d894" absoluteBounds="9.765, 9.335, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c703a18-91db-4851-a2fc-6bd6e064560d" isExpanded="false" absoluteBounds="5, 2, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_REKAP_JUMLAH_SOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9aedcc0-6bc3-4df6-87d6-16cc64356ad3" absoluteBounds="5.0150000000000006, 2.46, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee799964-6cc7-48f1-bcf2-9ced695af502" isExpanded="false" absoluteBounds="2.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_PERMISSION_GP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cb35614-7c3f-4e6a-b483-e67e4001eb0f" absoluteBounds="2.7650000000000006, 7.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb77ff4c-5f5e-4125-bf1a-0138be74833f" isExpanded="false" absoluteBounds="0.5, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_POSISI_ALL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eccdb25-5603-430d-b9ee-8d74ba206d70" absoluteBounds="0.51500000000000057, 7.71, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c1fded3-a178-4e3b-be4e-924e317d42f3" isExpanded="false" absoluteBounds="5, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_QUESTION_ESSAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d08e8b8-bf37-40e0-a71c-955f92c44447" absoluteBounds="5.0150000000000006, 1.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d087baa1-820f-4948-9d12-14a4dc00a4e1" isExpanded="false" absoluteBounds="0.5, 7.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_KELOMPOK_SOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79516683-37d3-423b-836b-f993c0010843" absoluteBounds="0.51499999999999968, 8.335, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bec92b3-267d-4f34-b31a-0e87ec21c87d" isExpanded="false" absoluteBounds="2.75, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_T_REGISTRATION_NEW" />
+      <nestedChildShapes>
+        <elementListCompartment Id="772ab4e4-9a9b-4d7e-bec5-a3b3d04598fc" absoluteBounds="2.7649999999999997, 5.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce750849-dbf7-4c2b-a35d-a8c016141a8a" isExpanded="false" absoluteBounds="5, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_MATERI_AVAILABLE_ON_EGI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c0b2f50-5def-4f6f-851e-06684718dcc2" absoluteBounds="5.015, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="500c8a13-5d9e-47dd-b413-0e05203c98e1" isExpanded="false" absoluteBounds="0.5, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_R_CERTIFICATOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2cc9bdc-9684-4471-93d3-322d095bb98b" absoluteBounds="0.51499999999999968, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96784b96-ff78-4c59-9e1d-5465b4cb21fe" isExpanded="false" absoluteBounds="7.625, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_CERTIFICATOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd62fe3f-4f08-4afe-9210-3e2ff6269e2b" absoluteBounds="7.6400000000000006, 6.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29735c27-c639-445d-b33c-0f43634f625f" isExpanded="false" absoluteBounds="2.75, 4, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_ALL_QUESTION_LIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1147d56-bd3f-4d0c-b26e-f3c0003ce7eb" absoluteBounds="2.765, 4.46, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19e690d0-a09b-499c-9ba9-8ad3cfbc9f11" isExpanded="false" absoluteBounds="7.625, 7, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_REQUEST_ACESSOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12ef00ae-770c-47db-9753-9a754aaa81f5" absoluteBounds="7.6400000000000006, 7.4600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebdfe583-5d19-4774-ac18-9451fb35dee2" isExpanded="false" absoluteBounds="5.125, 6, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_JAWABANSOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c79f53bd-67d6-48c1-bca1-db34f5128f83" absoluteBounds="5.14, 6.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a177900e-a810-4ed7-aeb9-766de3413ba3" isExpanded="false" absoluteBounds="9.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_ANSWER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f5e1074-b6cf-46bf-b55a-8a8cd6b8d2cd" absoluteBounds="9.765, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7cbab4f4-978b-425f-b258-f94734430649" isExpanded="false" absoluteBounds="5.125, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_REQUEST_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="817d41cf-b9cd-47fe-b982-03f84b1530f4" absoluteBounds="5.14, 5.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="adda7e4d-aac4-4479-b736-1191416bf20e" isExpanded="false" absoluteBounds="5.125, 4.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_EXAM_MASTER_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a1322f7-e5c1-4eba-aea9-f596ee1d41fc" absoluteBounds="5.14, 4.585, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f90ab449-acd9-405c-9923-e5af02b8fdbd" isExpanded="false" absoluteBounds="12.375, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_TMP_QUESTION_ALL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5151305-35d2-4fb3-9634-7cb6cea1831a" absoluteBounds="12.39, 0.96, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fad0079e-6d0b-4285-aff2-a13f79187027" isExpanded="false" absoluteBounds="7.625, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_QUESTION_ALL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d41ab0b7-fc85-4d3d-a667-135756960368" absoluteBounds="7.64, 1.085, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="457321c7-4506-4437-be86-b3a6ca58a66b" isExpanded="false" absoluteBounds="14.625, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_REGISTRATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c50a63f5-0b8f-4abb-a6b5-ac66a6c856d3" absoluteBounds="14.64, 1.585, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18bb549c-2638-4079-83bf-ff412a1190c2" isExpanded="false" absoluteBounds="14.625, 3, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_DETAIL_CORRECTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f34cc2c8-d119-4871-a07b-63136183f7e7" absoluteBounds="14.64, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4da40ba-7073-44f8-8daa-ef76e310d629" isExpanded="false" absoluteBounds="2.75, 6, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_WAKTU_SESI_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="561c9581-4369-4a63-b83e-153a357ed65d" absoluteBounds="2.765, 6.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="778eafd1-9238-4382-bc99-0c7c55abb52f" isExpanded="false" absoluteBounds="14.625, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_EVENTS_TIME_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9879637-1c0e-4aed-a285-37ed2163357d" absoluteBounds="14.64, 2.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34f2fb06-d4c5-4fb0-8c1d-f2264dbae516" isExpanded="false" absoluteBounds="5, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_QUESTION_ON_EXAMPROC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1742bcb-71df-4a19-bf03-7ae426e50dd2" absoluteBounds="5.015, 3.835, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58457ea9-d9d8-4f68-99ce-42496eac90f7" isExpanded="false" absoluteBounds="9.75, 5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_MODULE_SUB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3dfffa7-591b-4200-8604-00fe7fa9afeb" absoluteBounds="9.765, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53494d22-f966-48e4-8738-c30ae86ffaa8" isExpanded="false" absoluteBounds="14.625, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_MODULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05725ed9-cc9e-442d-9622-bffebb649369" absoluteBounds="14.64, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="734af0fd-a25a-414b-bb49-c9bdfc55b1c1" isExpanded="false" absoluteBounds="7.625, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_HANDBOOK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88601cd0-cab1-498f-b19f-8f33d9812441" absoluteBounds="7.64, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89a99adb-7a52-42fa-b95b-c8daeea511d0" isExpanded="false" absoluteBounds="5.125, 6.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_EMPLOYEE_HISTORICAL_EXAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86c2908f-6bf1-4ad4-88f9-6be2297487fe" absoluteBounds="5.14, 7.085, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e794e63a-545e-4c18-8fba-547b657383d7" isExpanded="false" absoluteBounds="5.125, 8.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_AnalisaSoal_1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efc18c5a-501f-4ce9-b43a-b4b8d78723d3" absoluteBounds="5.14, 8.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71149e42-0b4b-4e45-ab0f-65e4edbd9ebc" isExpanded="false" absoluteBounds="2.75, 8.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_AnalisaSoal_byModule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dbb643a-b791-449b-8880-9fdb0891673b" absoluteBounds="2.765, 9.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d235cfd0-f099-46e0-9384-9092832dfdbc" isExpanded="false" absoluteBounds="5.125, 7.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_ANALYZE_SOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d41e49a-d027-464b-acbe-28c44b3d7ac1" absoluteBounds="5.14, 8.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abe64bfd-3f2b-4e75-93fd-90308e1ca466" isExpanded="false" absoluteBounds="5.125, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_POSISI_GROUP_TO_ELLIPSE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91a42883-c8eb-4b9a-ac00-9c37297c2ea9" absoluteBounds="5.14, 9.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44b99d52-7c90-4850-b96c-ff504b98e423" isExpanded="false" absoluteBounds="5.125, 9.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_RESULT_HASIL_UJIAN_RESULT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2bd0ebf-6fcb-4f9d-a337-172b900a8397" absoluteBounds="5.1400000000000006, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b3b8f92-8c86-43c0-a80c-31708fcfa263" isExpanded="false" absoluteBounds="5.125, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_CORRECTION_REQUEST_MASTER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e917775-677f-4cd5-83c7-d7c3d87edc60" absoluteBounds="5.14, 7.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d7721f8-31d8-415c-8306-a112e2344d79" isExpanded="false" absoluteBounds="5.125, 5.375, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_NEVER_REGISTERED" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f31c7b0-43f0-4cf5-9733-82a02b6f6228" absoluteBounds="5.14, 5.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d6a27b8-78fd-4eb4-bd73-4d766fc3e845" isExpanded="false" absoluteBounds="2.75, 7.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_RESULT_HASIL_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df38ad0d-e578-4306-acd8-914f8edabadf" absoluteBounds="2.765, 8.335, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26bf7725-e8e8-4d46-a79d-79cf77968c23" isExpanded="false" absoluteBounds="0.5, 8.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_MOR_OPERATOR_ALL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb26f656-99cf-49fd-876e-8e7bbf6300e1" absoluteBounds="0.515, 9.085, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2546494b-4147-4a83-bfac-dcebf8f3f0da" isExpanded="false" absoluteBounds="7.625, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_DWH_EMPLOYEE_GUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6508d81d-d0d9-4fd6-a876-84925e091b33" absoluteBounds="7.64, 2.335, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33080bc5-f808-4e30-8953-e595cecc0235" isExpanded="false" absoluteBounds="2.75, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_DIFFERENT_IN_EXAM_DATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f263ee38-009c-4e9e-b746-eeccc9abb8b8" absoluteBounds="2.765, 9.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fa6812f-5973-4bdb-816f-6b2ac274a112" isExpanded="false" absoluteBounds="2.75, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_EVENT_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c098cd5-e777-41dd-820a-050311148719" absoluteBounds="2.765, 1.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba82db60-f3cc-438b-ae4f-5d38e640f487" isExpanded="false" absoluteBounds="7.625, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_DUMP_VW_DIFFERENT_IN_EXAM_DATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="615fd4f0-9dd2-4f56-bf9d-4c1b5b6bc4ea" absoluteBounds="7.64, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39171340-645f-4130-b4c5-4be0a34d7788" isExpanded="false" absoluteBounds="9.75, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_DUMP_VW_RESULT_HASIL_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="408e1994-823a-4516-ab9c-e9a4bbd66c1f" absoluteBounds="9.765, 2.335, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e45c0a77-f21d-4a1f-baf8-fa22e8c2172e" isExpanded="false" absoluteBounds="9.75, 7, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_LOG_SWICH_ASESOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aaac7a61-2de8-4608-9345-d4f5836d6eca" absoluteBounds="9.765, 7.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="573f2b20-674e-413e-bba9-5f4e01b3f446" isExpanded="false" absoluteBounds="0.5, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_T_SWICH_ASESOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54985cdb-4966-456a-9a6a-ad68f3c6c9d8" absoluteBounds="0.515, 9.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b18fb9a5-1267-4e9d-b324-7849da10cba8" isExpanded="false" absoluteBounds="2.75, 9.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_FINAL_RESULT_UJIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83904b2f-fcdd-48b8-8073-737a227c14d2" absoluteBounds="2.765, 10.335, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7def3a69-fd57-4620-9a21-a90f9f92a183" isExpanded="false" absoluteBounds="7.625, 5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_EVENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a85543be-d533-430b-91bf-f0fc3e46609e" absoluteBounds="7.64, 5.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ecff94e-15e6-4a7b-b3a7-df887c372983" isExpanded="false" absoluteBounds="2.75, 10.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_NOT_COMPLETE_EXAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d2f3bc7-d752-4956-a5f1-856c2b001179" absoluteBounds="2.765, 10.96, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d56a991-4910-4e1a-98b7-bf62f00836ab" isExpanded="false" absoluteBounds="12.375, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_T_DUMP_NOT_COMPLETE_EXAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c373a5c2-908f-4a8c-bc8e-90ff128bbc1e" absoluteBounds="12.39, 9.71, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d692a2b-6d44-4244-bcf2-d0cdd8b362f4" isExpanded="false" absoluteBounds="0.5, 9.875, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_PARTICIPANT_NEWREGISTRATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a178853b-50d9-45ee-9934-d3471d77d753" absoluteBounds="0.515, 10.335, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7d5e253-fef9-47e4-9eff-cec971752ee3" isExpanded="false" absoluteBounds="0.5, 10.5, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/VW_READING_REPORT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="647c3627-73aa-456d-a16d-26640b9d29c5" absoluteBounds="0.515, 10.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4f86690-485f-45aa-af14-175a36b79829" isExpanded="false" absoluteBounds="9.75, 7.625, 2, 0.45">
+      <DataClassMoniker Name="/DtClass_OcelEnchDataContext/TBL_R_TYPE_SOAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d8cb7bf-843d-4330-9455-d706c409fba8" absoluteBounds="9.765, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

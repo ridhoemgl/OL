@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Module Setting";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Module";
+    ViewBag.dashboardSmall = "Setting";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="gridMS"></div>
+
+<div id="wnd_editor">
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Submodule Name</div>
+        <div class="col-md-4"> <input type="text" id="id_submodule" /></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Module Name</div>
+        <div class="col-md-4"> <input type="text" id="id_module" /></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Priority</div>
+        <div class="col-md-4">
+            <input type="text" id="id_priority" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Total Question</div>
+        <div class="col-md-4">
+            <input type="text" id="id_question" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Passing Grade</div>
+        <div class="col-md-4">
+            <input type="text" id="id_passing_grade" />
+        </div>
+    </div>
+    <hr />
+    <div class="row" style="justify-content: center;">
+        <button id="btn_save" class="k-button" style="margin:10px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save</button>
+        <button id="btn_cancel" class="k-button" style="margin: 10px;"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+    </div>
+</div>
+
+<script src="~/Js/ModuleSetting.js"></script>

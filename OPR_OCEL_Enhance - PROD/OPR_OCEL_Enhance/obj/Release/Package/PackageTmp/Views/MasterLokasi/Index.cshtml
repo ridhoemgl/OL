@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Master Lokasi";
+    ViewBag.dashboard = "Master";
+    ViewBag.dashboardSmall = "Lokasi";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="gridLokasi"></div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/MasterLokasi.js"></script>

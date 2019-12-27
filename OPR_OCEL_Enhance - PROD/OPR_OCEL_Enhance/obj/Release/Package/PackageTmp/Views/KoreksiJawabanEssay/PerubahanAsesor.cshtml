@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Monitor Ujian | Perubahan Asesor";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Monitor Ujian";
+    ViewBag.dashboardSmall = " Perubahan Asesor";
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="grid_switc">
+
+</div>
+<br />
+
+<div id="wnd_employee">
+    <div id="gridEmployee">
+
+    </div>
+</div>
+
+<div id="wnd_vendor">
+    <div id="gridVendor"></div>
+</div>
+<label id="lbl_selected_acessor" hidden></label>
+<div class="row">
+    <div class="col-md-7">
+        <div class="input-group input-group-sm mb-3">
+            <input type="text" class="form-control text-center" id="txt_selected_nrp" readonly placeholder="Pilih Asesor yang sudah terdaftar" aria-label="Pilih Asesor yang sudah terdaftar" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="btn_browse">....</button>
+                <button class="btn btn-secondary btn-success" type="button" id="btn_switct" disabled><i class="fa fa-repeat" aria-hidden="true"></i> Ubah Asesor Peserta Terpilih</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/PerubahanAcessor.js"></script>
+

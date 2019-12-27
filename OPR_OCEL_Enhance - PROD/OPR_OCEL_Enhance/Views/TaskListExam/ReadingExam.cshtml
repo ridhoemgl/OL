@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Exam | Self Exam";
+    Layout = "~/Views/Shared/_LayoutMasterPeserta.cshtml";
+
+    int REMAINDING = ViewBag.remainTime;
+}
+<input type="hidden" id="txt_pdf_file" value="@ViewBag.pdfurl" />
+<input type="hidden" id="txt_reman_time" value="@REMAINDING" />
+<input type="hidden" id="txt_record_id" value="@ViewBag.RECORD_ID" />
+<input type="hidden" id="txt_task_id" value="@ViewBag.task_id" />
+<input type="hidden" id="txt_step" value="@ViewBag.step_code" />
+<input type="hidden" id="txt_compentency_id" value="@ViewBag.COMPETRNCY_CODE" />
+
+<style>
+    .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+    }
+
+        .lds-ripple div {
+            position: absolute;
+            border: 4px solid #fff;
+            opacity: 1;
+            border-radius: 50%;
+            animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+
+            .lds-ripple div:nth-child(2) {
+                animation-delay: -0.5s;
+            }
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.SetURL" />
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="pull-right"><span class="badge badge-default">Materi : @ViewBag.materi</span></h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="pdf_viewer" class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fa fa-info-circle" aria-hidden="true"></i> INFORMASI</h4>
+            </div>
+            <div class="card-body">
+                <p style="text-align:justify">Anda minimal harus membaca materi ini selama <b><u>60 Menit</u></b>, Anda tidak akan bisa lanjut ke tahap berikutnya jika waktu pada timer ini belum habis.</p>
+                <b><p>Anda boleh mencicil pembacaan materi</p></b>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5>TIME REMAINING <i class="fa fa-clock-o"></i></h5>
+                <hr />
+                <div>Waktu Baca Tersisa <b><span id="time">0</span> Menit</b></div>
+                <progress value="0" max="3200" id="progressBar" style="width:100%"></progress>
+            </div>
+            <br />
+            <button id="bt_finish_read" class="btn btn-block btn-success" hidden>Saya Sudah Selesai Membaca</button>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5><i class="fa fa-cog" aria-hidden="true"></i> Progress : <label id="lbl_progress_bar">@ViewBag.progres_complete</label> %</h5>
+                <hr />
+                <div class="progress">
+                    <div id="prog_bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar " style="width: @ViewBag.progres_complete%;" aria-valuenow="@ViewBag.progres_complete" aria-valuemin="@ViewBag.progres_complete" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="@ViewBag.SetURL/ContentLayout/js/pdfviewer.js"></script>
+<script type="text/javascript" src="@ViewBag.SetURL/Js/User/cpmd/cpmd_ReadingExam.js"></script>

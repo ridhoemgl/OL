@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Materi | Dokumen List";
+    Layout = "~/Views/Shared/_LayoutMasterPeserta.cshtml";
+    ViewBag.dashboard = "Materi";
+    ViewBag.dashboardSmall = "CIS Document List";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+
+}
+
+<style>
+    .pdfobject-container {
+        height: 50rem;
+        border: 1rem solid rgba(0,0,0,.1);
+    }
+
+    .img_log_nav {
+        width: 90%;
+        height: 90%;
+        padding-left: inherit;
+    }
+
+    body {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+</style>
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div id="grid_exampbook"></div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="md_pdf_preview">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div id="pdf_review"></div>
+        </div>
+    </div>
+</div>
+<ul id="menu">
+    <li id="read">
+        <i class="fa fa-book" aria-hidden="true"></i>  Read
+    </li>
+</ul>
+
+<script src="~/ContentLayout/js/pdfobject.js"></script>
+<script src="~/Js/CisExamDocument.js"></script>

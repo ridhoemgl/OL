@@ -1,0 +1,2142 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_ONLINE_EXAM_OCEL" Class="DtClass_OcelEnchDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=jiepsqco413;Initial Catalog=DB_ONLINE_EXAM_OCEL;Persist Security Info=True;User ID=ocel_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_ONLINE_EXAM_OCELConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="EnchOcel.TBL_R_EGI_MAPPING" Member="TBL_R_EGI_MAPPINGs">
+    <Type Name="TBL_R_EGI_MAPPING">
+      <Column Name="EQUIP_GRP_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GROUP_EQUIP_CLASS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EGI_MAPPING_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_T_MATRIX_COMPETENCY" Member="TBL_T_MATRIX_COMPETENCies">
+    <Type Name="TBL_T_MATRIX_COMPETENCY">
+      <Column Name="PID" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="VERSATILITY_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIFIED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_APPLICATION" Member="TBL_R_APPLICATIONs">
+    <Type Name="TBL_R_APPLICATION">
+      <Column Name="APP_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="APP_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="OWNER_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FILTER_STRING" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_EXAM_STATUS" Member="TBL_R_EXAM_STATUS">
+    <Type Name="TBL_R_EXAM_STATUS">
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EXAM_STATUS_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_PACKAGE" Member="TBL_R_PACKAGEs">
+    <Type Name="TBL_R_PACKAGE">
+      <Column Name="PACKAGE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PACKAGE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PACKAGE_GUIDANCE" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_NEED_REQUISITE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_TIME_BASED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MODIFICATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_QUESTION" Member="TBL_R_QUESTIONs">
+    <Type Name="TBL_R_QUESTION">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_TIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_MAX_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_ANSWER" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_2" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_2_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_3" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_3_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_4" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_4_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_5" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_5_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_6" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_6_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_7" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_7_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_8" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_8_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_9" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_9_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_10" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_10_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MODIFICATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_QUESTION_TYPE" Member="TBL_R_QUESTION_TYPEs">
+    <Type Name="TBL_R_QUESTION_TYPE">
+      <Column Name="QUESTION_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_NEED_CHECK" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_STUDENT" Member="TBL_R_STUDENTs">
+    <Type Name="TBL_R_STUDENT">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STUDENT_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STUDENT_BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STUDENT_LOGIN_ID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="STUDENT_PASS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="STUDENT_MAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_TEST_CENTER" Member="TBL_R_TEST_CENTERs">
+    <Type Name="TBL_R_TEST_CENTER">
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEST_CENTER_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FACILITY_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CAPACITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHECK_CAPACITY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_REGISTRATION_BACKUP" Member="TBL_T_REGISTRATION_BACKUPs">
+    <Type Name="TBL_T_REGISTRATION_BACKUP">
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="IS_TIME_BASED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_FREQ" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXAM_END_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EXAM_PASS_STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REMARKS_BACKUP" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_REGISTRATION_NUMBER" Member="TBL_T_REGISTRATION_NUMBERs">
+    <Type Name="TBL_T_REGISTRATION_NUMBER">
+      <Column Name="LAST_COUNT" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_RESULT" Member="TBL_T_RESULTs">
+    <Type Name="TBL_T_RESULT">
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_SUB_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION_SUB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMBER_OF_CORRECT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SUB_RESULT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WEIGHT_PERCENTAGE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SUB_RESULT_PERCENTAGE" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_T_SUKO_DETAIL" Member="TBL_T_SUKO_DETAILs">
+    <Type Name="TBL_T_SUKO_DETAIL">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VERSATILITY_ID" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_R_EGI_VERSATILITY" Member="TBL_R_EGI_VERSATILITies">
+    <Type Name="TBL_R_EGI_VERSATILITY">
+      <Column Name="EGI_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VERSATILITY_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_R_GOLONGAN" Member="TBL_R_GOLONGANs">
+    <Type Name="TBL_R_GOLONGAN">
+      <Column Name="GOLONGAN" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GOLONGAN_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_R_MOR_CERTIFICATOR" Member="TBL_R_MOR_CERTIFICATORs">
+    <Type Name="TBL_R_MOR_CERTIFICATOR">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ACTIVE_STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_R_VERSATILITY_SUB" Member="TBL_R_VERSATILITY_SUBs">
+    <Type Name="TBL_R_VERSATILITY_SUB">
+      <Column Name="VERSATILITY_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VERSATILITY_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.TBL_T_SUKO_" Member="TBL_T_SUKO_s">
+    <Type Name="TBL_T_SUKO_">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLAN_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_R_TEST_CENTER" Member="VW_R_TEST_CENTERs">
+    <Type Name="VW_R_TEST_CENTER">
+      <Column Name="PID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TEST_CENTER_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FACILITY_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CAPACITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHECK_CAPACITY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_MODULE_EGI" Member="TBL_R_MODULE_EGIs">
+    <Type Name="TBL_R_MODULE_EGI">
+      <Column Name="PID_EM" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_PID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_EGI" Member="TBL_M_EGIs">
+    <Type Name="TBL_M_EGI">
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GROUP_EQUIP_CLASS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_MODULE_EGI" Member="VW_MODULE_EGIs">
+    <Type Name="VW_MODULE_EGI">
+      <Column Name="PID_EM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_DISTRIK" Member="VW_DISTRIKs">
+    <Type Name="VW_DISTRIK">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_STATUS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_POSITION_APP_ELLIPSE" Member="TBL_M_POSITION_APP_ELLIPSEs">
+    <Type Name="TBL_M_POSITION_APP_ELLIPSE">
+      <Column Name="PID_PE" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_POSITION" Member="VW_POSITIONs">
+    <Type Name="VW_POSITION">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_T_COMPETENCY_MATRIX" Member="TBL_T_COMPETENCY_MATRIXes">
+    <Type Name="TBL_T_COMPETENCY_MATRIX">
+      <Column Name="PID_CM" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_MODULE_POSITION" Member="VW_MODULE_POSITIONs">
+    <Type Name="VW_MODULE_POSITION">
+      <Column Name="PID_PM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_PID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_MODULE_POSITION" Member="TBL_R_MODULE_POSITIONs">
+    <Type Name="TBL_R_MODULE_POSITION">
+      <Column Name="PID_PM" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_PID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_EMPLOYEE" Member="VW_EMPLOYEEs">
+    <Type Name="VW_EMPLOYEE">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ACTIVE_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMP_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_T_COMPETENCY_MATRIX" Member="VW_T_COMPETENCY_MATRIXes">
+    <Type Name="VW_T_COMPETENCY_MATRIX">
+      <Column Name="PID_CM" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_EQUIP_CLASS" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IS_STATUS_ENABLE_OPR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_STATUS_ENABLE_STAFF" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_MODULE_SUB" Member="VW_MODULE_SUBs">
+    <Type Name="VW_MODULE_SUB">
+      <Column Name="PID" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SUB_MODUL_DIST" Member="VW_SUB_MODUL_DISTs">
+    <Type Name="VW_SUB_MODUL_DIST">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_EMPLOYEE_OTHER" Member="TBL_M_EMPLOYEE_OTHERs">
+    <Type Name="TBL_M_EMPLOYEE_OTHER">
+      <Column Name="PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NAMA" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="POSISI" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERUSAHAAN" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_JENIS_UJIAN" Member="TBL_R_JENIS_UJIANs">
+    <Type Name="TBL_R_JENIS_UJIAN">
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.vw_setWaktu" Member="vw_setWaktus">
+    <Type Name="vw_setWaktu">
+      <Column Name="PID_SW" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GOL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_PilihanGanda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_GandaCampur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_ESSAI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_PilihanGanda" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_GandaCampur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIME_ESSAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.vw_kelompokSoal" Member="vw_kelompokSoals">
+    <Type Name="vw_kelompokSoal">
+      <Column Name="PID" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_SETTING_WAKTU" Member="TBL_M_SETTING_WAKTUs">
+    <Type Name="TBL_M_SETTING_WAKTU">
+      <Column Name="PID_SW" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="GOL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_PilihanGanda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COUNT_GandaCampur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COUNT_ESSAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIME_PilihanGanda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIME_GandaCampur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIME_ESSAI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_CERTIFICATOR_LOCATION" Member="VW_CERTIFICATOR_LOCATIONs">
+    <Type Name="VW_CERTIFICATOR_LOCATION">
+      <Column Name="CERTIFICATOR" Type="System.String" DbType="VarChar(261)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_TMP_MAPPING_POSISITOELLIPSE" Member="VW_TMP_MAPPING_POSISITOELLIPSEs">
+    <Type Name="VW_TMP_MAPPING_POSISITOELLIPSE">
+      <Column Name="SESS_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_POSITION2" Member="VW_POSITION2s">
+    <Type Name="VW_POSITION2">
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_POSISI_APP_TO_ELLIPSE" Member="VW_POSISI_APP_TO_ELLIPSEs">
+    <Type Name="VW_POSISI_APP_TO_ELLIPSE">
+      <Column Name="PID_PE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_ELLIPSE_DESC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_STUDY_FOR_EXAM" Member="VW_STUDY_FOR_EXAMs">
+    <Type Name="VW_STUDY_FOR_EXAM">
+      <Column Name="HANDBOOK_PID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FILE_PATH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FILE_NAME" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_CERT_TYPE" Member="TBL_R_CERT_TYPEs">
+    <Type Name="TBL_R_CERT_TYPE">
+      <Column Name="CERT_PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CERT_NAME" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CERT_ALIAS" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CERT_DESC" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LAST_UPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_POSITION_APP" Member="TBL_M_POSITION_APPs">
+    <Type Name="TBL_M_POSITION_APP">
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSING_GRADE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_M_KELOMPOK_SOAL" Member="TBL_M_KELOMPOK_SOALs">
+    <Type Name="TBL_M_KELOMPOK_SOAL">
+      <Column Name="PID" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2C]" Member="_2C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2D]" Member="_2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2E]" Member="_2E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2F]" Member="_2F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3A]" Member="_3A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3B]" Member="_3B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_REKAP_JUMLAH_SOAL" Member="VW_REKAP_JUMLAH_SOALs">
+    <Type Name="VW_REKAP_JUMLAH_SOAL">
+      <Column Name="POSISI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODUL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2C]" Member="_2C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2D]" Member="_2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2E]" Member="_2E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2F]" Member="_2F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3A]" Member="_3A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3B]" Member="_3B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_PERMISSION_GP" Member="VW_PERMISSION_GPs">
+    <Type Name="VW_PERMISSION_GP">
+      <Column Name="Primer" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Menu" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="GP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[LEVEL]" Member="LEVEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Menu_link" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Permission" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="D" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="E" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="R" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_POSISI_ALL" Member="VW_POSISI_ALLs">
+    <Type Name="VW_POSISI_ALL">
+      <Column Name="ID_POSITION" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DISTRICT" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="OCCUP_TYPE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="OCCUP_TYPE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_OCCUP_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_OCCUP_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COST_CENTRE" Type="System.String" DbType="VarChar(24)" CanBeNull="true" />
+      <Column Name="DEPT" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OCCUP_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="OCCUP_STATUS_DESC" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="DEPT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DIV_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SUPERIOR_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DWH_GROUP_OCCUP_TYPE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FUNCTIONAL_STRUCTURE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="OCCUP_GRADE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="FL_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="FL_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_QUESTION_ESSAY" Member="VW_QUESTION_ESSAYs">
+    <Type Name="VW_QUESTION_ESSAY">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_TIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IMAGE_PATH" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_KELOMPOK_SOAL" Member="VW_KELOMPOK_SOALs">
+    <Type Name="VW_KELOMPOK_SOAL">
+      <Column Name="PID" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="J_ACTUAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2C]" Member="_2C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2D]" Member="_2D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2E]" Member="_2E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_2F]" Member="_2F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3A]" Member="_3A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3B]" Member="_3B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.VW_T_REGISTRATION_NEW" Member="VW_T_REGISTRATION_NEWs">
+    <Type Name="VW_T_REGISTRATION_NEW">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLAN_DATE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RELEASE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RELEASE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_MATERI_AVAILABLE_ON_EGI" Member="VW_MATERI_AVAILABLE_ON_EGIs">
+    <Type Name="VW_MATERI_AVAILABLE_ON_EGI">
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FILE_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HANDBOOK_PID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_R_CERTIFICATOR" Member="VW_R_CERTIFICATORs">
+    <Type Name="VW_R_CERTIFICATOR">
+      <Column Name="LOGIN_ID" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DATE_EXPIRED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NO_URUT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NO_REG_ASESOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_ASESOR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="D" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_R_CERTIFICATOR" Member="TBL_R_CERTIFICATORs">
+    <Type Name="TBL_R_CERTIFICATOR">
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NO_REG_ASESOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IS_ASESOR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DATE_EXPIRED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_ALL_QUESTION_LIST" Member="VW_ALL_QUESTION_LISTs">
+    <Type Name="VW_ALL_QUESTION_LIST">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_ANSWER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_2" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_2_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_3" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_3_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_4" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_4_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_5" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_5_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_6" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_6_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_7" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_7_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_8" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_8_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_9" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_9_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_10" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_10_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IMAGE_PATH" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODIFICATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CERT_FOR" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DESTINATION_POSITION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_T_REQUEST_ACESSOR" Member="TBL_T_REQUEST_ACESSORs">
+    <Type Name="TBL_T_REQUEST_ACESSOR">
+      <Column Name="REQUEST_PID" Type="System.String" DbType="VarChar(40) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CERTIFICATOR_NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_JAWABANSOAL" Member="VW_JAWABANSOALs">
+    <Type Name="VW_JAWABANSOAL">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QA_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KEYS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UPDATE_KEY_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_ANSWER" Member="TBL_T_ANSWERs">
+    <Type Name="TBL_T_ANSWER">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QA_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_REQUEST_UJIAN" Member="VW_REQUEST_UJIANs">
+    <Type Name="VW_REQUEST_UJIAN">
+      <Column Name="REQUEST_PID" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CERTIFICATOR_NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REQUEST_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_DES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_EXAM_MASTER_DETAILS" Member="VW_EXAM_MASTER_DETAILs">
+    <Type Name="VW_EXAM_MASTER_DETAIL">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="KODE_ASESOR" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_STATUS_DESC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_DESC" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RELEASE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RELEASE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUB_MODULE_ID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_TMP_QUESTION_ALL" Member="TBL_TMP_QUESTION_ALLs">
+    <Type Name="TBL_TMP_QUESTION_ALL">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SESSION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_TIME" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_ANSWER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_2_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_3_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_4_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_5_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_6_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_7" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_7_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_8" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_8_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_9" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_9_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_10_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CERT_FOR" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DESTINATION_POSITION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_QUESTION_ALL" Member="TBL_R_QUESTION_ALLs">
+    <Type Name="TBL_R_QUESTION_ALL">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CERT_FOR" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DESTINATION_POSITION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QUESTION_MAX_TIME" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_MAX_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QUESTION_MAX_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_2_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_3_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_4_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_5_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_6_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_7_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_8_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_9_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_10_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IMAGE_PATH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIFICATION_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIFIED_BY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EGI_GENERAL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_REGISTRATION" Member="TBL_T_REGISTRATIONs">
+    <Type Name="TBL_T_REGISTRATION">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RELEASE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RELEASE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUB_MODULE_ID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_T_DETAIL_CORRECTION" Member="TBL_T_DETAIL_CORRECTIONs">
+    <Type Name="TBL_T_DETAIL_CORRECTION">
+      <Column Name="CORRECTION_DETAIL_PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CORRECTION_PID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QA_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NILAI" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_WAKTU_SESI_DETAIL" Member="VW_WAKTU_SESI_DETAILs">
+    <Type Name="VW_WAKTU_SESI_DETAIL">
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIME_EXAM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_EVENTS_TIME_DETAIL" Member="TBL_T_EVENTS_TIME_DETAILs">
+    <Type Name="TBL_T_EVENTS_TIME_DETAIL">
+      <Column Name="CODE_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_EXAM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_QUESTION_ON_EXAMPROC" Member="VW_QUESTION_ON_EXAMPROCs">
+    <Type Name="VW_QUESTION_ON_EXAMPROC">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QA_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_MAX_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QUESTION_MAX_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_1" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_1_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_2" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_2_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_3" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_3_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_4" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_4_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_5" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_5_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_6" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_6_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_7" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_7_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_8" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_8_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_9" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_9_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANSWER_10" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ANSWER_10_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IMAGE_PATH" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_MODULE_SUB" Member="TBL_R_MODULE_SUBs">
+    <Type Name="TBL_R_MODULE_SUB">
+      <Column Name="PID" Type="System.String" DbType="VarChar(500) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_MODULE" Member="TBL_R_MODULEs">
+    <Type Name="TBL_R_MODULE">
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_HANDBOOK" Member="TBL_R_HANDBOOKs">
+    <Type Name="TBL_R_HANDBOOK">
+      <Column Name="HANDBOOK_PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FILE_PATH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FILE_NAME" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_EMPLOYEE_HISTORICAL_EXAM" Member="VW_EMPLOYEE_HISTORICAL_EXAMs">
+    <Type Name="VW_EMPLOYEE_HISTORICAL_EXAM">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PARTICIPANT_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EVENT_DESC" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RELEASE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RELEASE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUB_MODULE_ID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_AnalisaSoal_1" Member="VW_AnalisaSoal_1s">
+    <Type Name="VW_AnalisaSoal_1">
+      <Column Name="QUESTION_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOTAL_LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRUE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACH_TRUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FALSE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACH_FALSE" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="report.VW_AnalisaSoal_byModule" Member="VW_AnalisaSoal_byModules">
+    <Type Name="VW_AnalisaSoal_byModule">
+      <Column Name="CODE_ITEM" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="QTY_ON_BANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRUE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FALSE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="report.VW_ANALYZE_SOAL" Member="VW_ANALYZE_SOALs">
+    <Type Name="VW_ANALYZE_SOAL">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ISCORRECT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MUNCUL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_POSISI_GROUP_TO_ELLIPSE" Member="VW_POSISI_GROUP_TO_ELLIPSEs">
+    <Type Name="VW_POSISI_GROUP_TO_ELLIPSE">
+      <Column Name="GROUP_OCCUP_TYPE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_RESULT_HASIL_UJIAN_RESULT" Member="VW_RESULT_HASIL_UJIAN_RESULTs">
+    <Type Name="VW_RESULT_HASIL_UJIAN_RESULT">
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="JUMLAH_BERHASIL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JUMLAH_GAGAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTH_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_CORRECTION_REQUEST_MASTER" Member="VW_CORRECTION_REQUEST_MASTERs">
+    <Type Name="VW_CORRECTION_REQUEST_MASTER">
+      <Column Name="CORRECTION_PID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP_ACESSOR" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP_KARYAWAN" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="INSERT_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_CORRECTION" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_DECS" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_NEVER_REGISTERED" Member="VW_NEVER_REGISTEREDs">
+    <Type Name="VW_NEVER_REGISTERED">
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LONG_DESCRIPTION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_RESULT_HASIL_UJIAN" Member="VW_RESULT_HASIL_UJIANs">
+    <Type Name="VW_RESULT_HASIL_UJIAN">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UNIT_COMPETENCY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RESULT_EXAM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEST_CENTER" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="UJIAN_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MONTH_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STARTS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MOR_OPERATOR_ALL" Member="VW_MOR_OPERATOR_ALLs">
+    <Type Name="VW_MOR_OPERATOR_ALL">
+      <Column Name="EMPLOYEE_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DIV_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GOLONGAN_ID" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="GOL_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="HIRE_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HIRE_YEAR" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="POSITION_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="EMP_TYPE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EMP_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="KODE_ULAP" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Address_LotusNotes" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_HIRE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_DWH_EMPLOYEE_GUEST" Member="TBL_DWH_EMPLOYEE_GUESTs">
+    <Type Name="TBL_DWH_EMPLOYEE_GUEST">
+      <Column Name="EMPLOYEE_ID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIRST_NAME" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CHANGE_REASON" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CHANGE_REASON_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="WORK_LOC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="WORK_LOC_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMP_STATUS" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="EMP_STATUS_DESC" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="GENDER_CODE" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="GENDER_DESC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="EMP_TYPE" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EMP_TYPE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STAFF_CATEG" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="STAFF_CATEG_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HIRE_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SERVICE_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TERMINATION_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="STATUS_HIRE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="STATUS_HIRE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POINT_OF_HIRE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="POINT_OF_HIRE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACCOUNT_DOMAIN" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AGE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BLOOD_TYPE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RELIGION_DESC" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RES_ADDRESS_1" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="RES_ADDRESS_2" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="RES_ADDRESS_3" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="RES_ZIPCODE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SUPERIOR_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSITION_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="GOL_COMPTCY_LEVEL" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="GOL_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="HOME_PHONE_NO" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="HOME_MOBILE_NO" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="RANKS" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="RANK_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RANK_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="DEPT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPT_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPT_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DIV_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIV_CODE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address_LotusNotes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email_Internet" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ACTIVE_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GENDER" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="NAME_INITCAP" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="RELIGION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MODIFIED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RANKS_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RANKS_START_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SECONDARY_POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LAST_EDUCATION" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="BIRTH_PLACE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="BIRTH_PLACE_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_GOLONGAN" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="rowguid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MK" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DIFFERENT_IN_EXAM_DATE" Member="VW_DIFFERENT_IN_EXAM_DATEs">
+    <Type Name="VW_DIFFERENT_IN_EXAM_DATE">
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_APP_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EXAM_FINISHED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLANT_DATE_REMARK" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RANGE_DATE" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_EVENT_UJIAN" Member="VW_EVENT_UJIANs">
+    <Type Name="VW_EVENT_UJIAN">
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEST_CENTER_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_START" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_TYPE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LONG_DESCRIPTION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_END" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_DUMP_VW_DIFFERENT_IN_EXAM_DATE" Member="TBL_T_DUMP_VW_DIFFERENT_IN_EXAM_DATEs">
+    <Type Name="TBL_T_DUMP_VW_DIFFERENT_IN_EXAM_DATE">
+      <Column Name="PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EXAM_FINISHED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLAN_DATE_REMARK" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RANGE_DATE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_DUMP_VW_RESULT_HASIL_UJIAN" Member="TBL_T_DUMP_VW_RESULT_HASIL_UJIANs">
+    <Type Name="TBL_T_DUMP_VW_RESULT_HASIL_UJIAN">
+      <Column Name="PID_RESULT" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UNIT_COMPETENCY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESULT_EXAM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEST_CENTER" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="UJIAN_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MONTH_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STARTS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATE_DATE_TIME" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_T_LOG_SWICH_ASESOR" Member="TBL_T_LOG_SWICH_ASESORs">
+    <Type Name="TBL_T_LOG_SWICH_ASESOR">
+      <Column Name="PID_LOG_SWITCH" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NRP_ASESOR" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP_KARYAWAN" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CORRECTION_PID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_T_SWICH_ASESOR" Member="VW_T_SWICH_ASESORs">
+    <Type Name="VW_T_SWICH_ASESOR">
+      <Column Name="PID_LOG_SWITCH" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP_ASESOR" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAMA_ASESOR" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="NRP_KARYAWAN" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NAMA_KARYAWAN" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CORRECTION_PID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_FINAL_RESULT_UJIAN" Member="VW_FINAL_RESULT_UJIANs">
+    <Type Name="VW_FINAL_RESULT_UJIAN">
+      <Column Name="PID_RESULT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UNIT_COMPETENCY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESULT_EXAM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TEST_CENTER" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="UJIAN_NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MONTH_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR_EXAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STARTS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CREATE_DATE_TIME" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="exam.TBL_T_EVENTS" Member="TBL_T_EVENTs">
+    <Type Name="TBL_T_EVENT">
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LONG_DESCRIPTION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_START" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_END" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_NOT_COMPLETE_EXAM" Member="VW_NOT_COMPLETE_EXAMs">
+    <Type Name="VW_NOT_COMPLETE_EXAM">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="JENISSOAL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NAMA_UJIAN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TGL_REGISTRASI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="KODE_POSISI_APP" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UNIT_KOMPETENSI" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEST_CENTER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STARTS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CERTIFIKATOR_PENGGANTI" Type="System.String" DbType="VarChar(43) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_T_DUMP_NOT_COMPLETE_EXAM" Member="TBL_T_DUMP_NOT_COMPLETE_EXAMs">
+    <Type Name="TBL_T_DUMP_NOT_COMPLETE_EXAM">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="JENISSOAL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NAMA_UJIAN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TGL_REGISTRASI" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="KODE_POSISI_APP" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UNIT_KOMPETENSI" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEST_CENTER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STARTS_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CERTIFIKATOR_PENGGANTI" Type="System.String" DbType="VarChar(43) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_PARTICIPANT_NEWREGISTRATION" Member="VW_PARTICIPANT_NEWREGISTRATIONs">
+    <Type Name="VW_PARTICIPANT_NEWREGISTRATION">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAMA" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.VW_READING_REPORT" Member="VW_READING_REPORTs">
+    <Type Name="VW_READING_REPORT">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READING" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnchOcel.TBL_R_TYPE_SOAL" Member="TBL_R_TYPE_SOALs">
+    <Type Name="TBL_R_TYPE_SOAL">
+      <Column Name="TYPE_CODE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IS_ACTIVE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MAX_MULTIPLY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="EnchOcel.cusp_PositionSet" Method="cusp_PositionSet">
+    <Parameter Name="s_str_POSITION_DESC" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_bl_IS_ACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_VersatilitySet" Method="cusp_VersatilitySet">
+    <Parameter Name="s_str_MODULE_NAME" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_SubVersatilityset" Method="cusp_SubVersatilityset">
+    <Parameter Name="s_str_MODULE_SUB_NAME" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_str_MODULE_ID" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cufn_getKelompokSoal" Method="cufn_getKelompokSoal" IsComposable="true">
+    <Parameter Name="sPOSITION_CODE" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="sMODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="sEGI_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sTYPE_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sJENIS_UJIAN" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="cufn_getKelompokSoalResult">
+      <Column Name="PID" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EGI_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JENIS_UJIAN_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[_P0]" Member="_P0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P1]" Member="_P1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P2]" Member="_P2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P3]" Member="_P3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P4]" Member="_P4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P5]" Member="_P5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P6]" Member="_P6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P7]" Member="_P7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P8]" Member="_P8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_P9]" Member="_P9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3C]" Member="_3C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3D]" Member="_3D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3E]" Member="_3E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_3F]" Member="_3F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4A]" Member="_4A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4B]" Member="_4B" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4C]" Member="_4C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4D]" Member="_4D" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4E]" Member="_4E" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[_4F]" Member="_4F" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_settingWaktuCreate" Method="cusp_settingWaktuCreate">
+    <Parameter Name="sPOSITION_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sJENIS_UJIAN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sNRP" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_InsertCompetencyMatrix" Method="cusp_InsertCompetencyMatrix">
+    <Parameter Name="s_str_POSITION_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_str_MODULE_PID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_str_EGI_GENERAL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_str_nrp" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_cancel_InputMapping" Method="cusp_cancel_InputMapping">
+    <Parameter Name="SESS_CODE" Parameter="sESS_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_cancel_InputMapping" Method="cusp_cancel_InputMapping1">
+    <Parameter Name="SESS_CODE" Parameter="sESS_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cups_Insert_mapping_AppToEllipse" Method="cups_Insert_mapping_AppToEllipse">
+    <Parameter Name="DSTRCT_CODE" Parameter="dSTRCT_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="SESS_CODE" Parameter="sESS_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="POSITION_ELLIPSE" Parameter="pOSITION_ELLIPSE" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="POSITION_ELLIPSE_DESC" Parameter="pOSITION_ELLIPSE_DESC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="POSITION_CODE" Parameter="pOSITION_CODE" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="CREATE_BY" Parameter="cREATE_BY" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cups_DeleteMappingTempt" Method="cups_DeleteMappingTempt">
+    <Parameter Name="SESS_CODE" Parameter="sESS_CODE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="POSITION_ELLIPSE_DESC" Parameter="pOSITION_ELLIPSE_DESC" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_insert_AllAppToEllipse" Method="cusp_insert_AllAppToEllipse">
+    <Parameter Name="SESS_ID" Parameter="sESS_ID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_cancel_InputQuestionEssay" Method="cusp_cancel_InputQuestionEssay">
+    <Parameter Name="SESS_CODE" Parameter="sESS_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_kelompokSoalCreate" Method="cusp_kelompokSoalCreate">
+    <Parameter Name="sPOSITION_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sMODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="sEGI_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sTYPE_CODE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sJENIS_UJIAN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sNRP" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cups_Insert_access_user" Method="cups_Insert_access_user">
+    <Parameter Name="Primer" Parameter="primer" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="GP_ID" Parameter="gP_ID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_insert_QuestionEssay" Method="cusp_insert_QuestionEssay">
+    <Parameter Name="SESS_ID" Parameter="sESS_ID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_insert_QuestionPG" Method="cusp_insert_QuestionPG">
+    <Parameter Name="SESS_ID" Parameter="sESS_ID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_QuestionEssaySet" Method="cusp_QuestionEssaySet">
+    <Parameter Name="QST_ID" Parameter="qST_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MD" Parameter="mD" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="SMD" Parameter="sMD" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="TIME" Parameter="tIME" Type="System.Int32" DbType="Int" />
+    <Parameter Name="QUESTION" Parameter="qUESTION" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="ANSWER" Parameter="aNSWER" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="IMG_PATH" Parameter="iMG_PATH" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MODBY" Parameter="mODBY" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CERTFOR" Parameter="cERTFOR" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="DESTINATION_POS" Parameter="dESTINATION_POS" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="EGI_GENERAL" Parameter="eGI_GENERAL" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_insert_master_certificator" Method="cusp_insert_master_certificator">
+    <Parameter Name="CERTIFICATOR_ID" Parameter="cERTIFICATOR_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CERTIFICATOR_NAME" Parameter="cERTIFICATOR_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IS_ACTIVE" Parameter="iS_ACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="NO_REG_ASESOR" Parameter="nO_REG_ASESOR" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IS_ASESOR" Parameter="iS_ASESOR" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="ocel.cusp_CertificatorSet" Method="cusp_CertificatorSet">
+    <Parameter Name="s_str_CERTIFICATOR_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="s_str_CERTIFICATOR_name" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="s_bl_IS_ACTIVE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="s_bl_IS_ASESOR" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="s_str_REGIS_NO" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="s_str_DATEEXPIRED" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.GetAvailableSubModul" Method="GetAvailableSubModul">
+    <Parameter Name="EVENTID" Parameter="eVENTID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetAvailableSubModulResult">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_Update_STATUSExamNonSelftAssesmen" Method="cusp_Update_STATUSExamNonSelftAssesmen">
+    <Parameter Name="REQUEST_PID" Parameter="rEQUEST_PID" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="QUESTION_TYPE" Parameter="qUESTION_TYPE" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_update_percentage" Method="cusp_update_percentage">
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PERCENT_COMPLETE" Parameter="pERCENT_COMPLETE" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_UpdateEssayStatus_AndRequestCorrection" Method="cusp_UpdateEssayStatus_AndRequestCorrection">
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NRP_KARYAWAN" Parameter="nRP_KARYAWAN" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JENIS_REQUEST" Parameter="jENIS_REQUEST" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MAC_COMPUTER_ID" Parameter="mAC_COMPUTER_ID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_RequestAccFromAcessor" Method="cusp_RequestAccFromAcessor">
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CERTIFICATOR_NRP" Parameter="cERTIFICATOR_NRP" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JENIS_UJIAN_CODE" Parameter="jENIS_UJIAN_CODE" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_purge_insert_TSUKO_EXCEL" Method="cusp_purge_insert_TSUKO_EXCEL">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PERIOD" Parameter="pERIOD" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="GOLONGAN" Parameter="gOLONGAN" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="PLAN_DATE" Parameter="pLAN_DATE" Type="System.String" DbType="VarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_InsertRegisterExamSet" Method="cusp_InsertRegisterExamSet">
+    <Parameter Name="STUDENT_ID" Parameter="sTUDENT_ID" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="REGISTRATION_ID" Parameter="rEGISTRATION_ID" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="DEPARTMENT" Parameter="dEPARTMENT" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="POSITION_CODE" Parameter="pOSITION_CODE" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="POSITION_DESC" Parameter="pOSITION_DESC" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IS_SELF_ASSESMENT" Parameter="iS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="EXAM_STATUS" Parameter="eXAM_STATUS" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="EXAM_SCORE" Parameter="eXAM_SCORE" Type="System.Double" DbType="Float" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="HANDBOOK_PID" Parameter="hANDBOOK_PID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="POSISI_APP" Parameter="pOSISI_APP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="GOLONGAN" Parameter="gOLONGAN" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="EGI" Parameter="eGI" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="SUB_MODULE_ID" Parameter="sUB_MODULE_ID" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="EXAM_LOCATIONS" Parameter="eXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="cusp_InsertRegisterExamSetResult">
+      <Column Name="JUMLAH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_MAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ERROR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="[MODULE ID]" Member="MODULE_ID" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="[JENIS UJIAN]" Member="JENIS_UJIAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[TIPE SOAL]" Member="TIPE_SOAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIME_OF_MINUTES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[SUB MODUL]" Member="SUB_MODUL" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_GenerateAsssesmentQuestion1" Method="cusp_GenerateAsssesmentQuestion1">
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="POSITION_CODE" Parameter="pOSITION_CODE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EGI_GENERAL" Parameter="eGI_GENERAL" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="GOLONGAN_KARYAWAN" Parameter="gOLONGAN_KARYAWAN" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="SESSION_SET" Parameter="sESSION_SET" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REGISTRATION_ID" Parameter="rEGISTRATION_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EMPLOYEE_NRP" Parameter="eMPLOYEE_NRP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="POSITION_ELLIPSE_CODE" Parameter="pOSITION_ELLIPSE_CODE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="POSITION_ELLIPSE_DESCRIPTION" Parameter="pOSITION_ELLIPSE_DESCRIPTION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXAM_LOCATIONS" Parameter="eXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_SessionManagement" Method="cusp_SessionManagement">
+    <Parameter Name="TYPE" Parameter="tYPE" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TEST_CENTER_ID" Parameter="tEST_CENTER_ID" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="CERTIFICATOR_ID" Parameter="cERTIFICATOR_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DESCRIPTION" Parameter="dESCRIPTION" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="LONG_DESCRIPTION" Parameter="lONG_DESCRIPTION" Type="System.String" DbType="Text" />
+    <Parameter Name="MODULE_ID" Parameter="mODULE_ID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MODULE_NAME" Parameter="mODULE_NAME" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXAM_START" Parameter="eXAM_START" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="EXAM_END" Parameter="eXAM_END" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="QUESTION_TYPE" Parameter="qUESTION_TYPE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="JENIS_UJIAN_CODE" Parameter="jENIS_UJIAN_CODE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXAM_TARGET_MIN" Parameter="eXAM_TARGET_MIN" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cusp_SessionManagementResult">
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TEST_CENTER_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CERTIFICATOR_ID" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LONG_DESCRIPTION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_START" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_END" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CREATE_BY" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="JENIS_UJIAN_CODE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_TARGET_MIN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_UpdateSesiDetail" Method="cusp_UpdateSesiDetail">
+    <Parameter Name="CODE_ID" Parameter="cODE_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="WAKTU" Parameter="wAKTU" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WEIGHT" Parameter="wEIGHT" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_AlreadyCorrected" Method="cusp_AlreadyCorrected">
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CORRECTION_PID" Parameter="cORRECTION_PID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SCORE" Parameter="sCORE" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.Analyze_UserAnswer_MultipleChoise" Method="Analyze_UserAnswer_MultipleChoise" IsComposable="true">
+    <Parameter Name="JENIS_SOAL" Parameter="jENIS_SOAL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PARTICIPANT_NRP" Parameter="pARTICIPANT_NRP" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MODULE_ID" Parameter="mODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REGISTRATION_ID" Parameter="rEGISTRATION_ID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Analyze_UserAnswer_MultipleChoiseResult">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_COUNT_BY_SYS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOT_VALUE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="WEIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AFTER_WEIGHTING" Type="System.Decimal" DbType="Decimal(5,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="report.VW_AnalisaSoal_byCompetency" Method="VW_AnalisaSoal_byCompetency" IsComposable="true">
+    <Parameter Name="MODULE_ID" Parameter="mODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <ElementType Name="VW_AnalisaSoal_byCompetencyResult">
+      <Column Name="CODE_ITEM" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="QTY_ON_BANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRUE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FALSE_ANSWER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="report.cufn_question_analyze" Method="cufn_question_analyze" IsComposable="true">
+    <Parameter Name="MODULE_ID" Parameter="mODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="CORRECT_STAT" Parameter="cORRECT_STAT" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cufn_question_analyzeResult">
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_CONTENT" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ISCORRECT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAD_BY_SYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MUNCUL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cufn_CalonREgistrasi" Method="cufn_CalonREgistrasi" IsComposable="true">
+    <Parameter Name="word" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="cufn_CalonREgistrasiResult">
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="GOLONGAN" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PLAN_DATE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RELEASE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RELEASE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_updating_correction_pic" Method="cusp_updating_correction_pic">
+    <Parameter Name="participant_nrp" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="acessor_nrp" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.CariJawabanSoal" Method="CariJawabanSoal">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_register_employye_nondomain" Method="cusp_register_employye_nondomain">
+    <Parameter Name="employee_id" Type="System.String" DbType="VarChar(11)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cufn_get_sesi_ujian" Method="cufn_get_sesi_ujian" IsComposable="true">
+    <Parameter Name="dstrtc_code" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="jenis_ujian" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cufn_get_sesi_ujianResult">
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LOCATION" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="RANGE_START" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RANGE_END" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LONG_DESCRIPTION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cufn_get_monitoring_plan_aktual" Method="cufn_get_monitoring_plan_aktual" IsComposable="true">
+    <Parameter Name="EXAM_TYPE" Parameter="eXAM_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="POS_CODE" Parameter="pOS_CODE" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="cufn_get_monitoring_plan_aktualResult">
+      <Column Name="PID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_APP_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DSTRCT_TEST_LOCATION" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EXAM_FINISHED" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PLAN_DATE_REMARK" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="RANGE_DATE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_repl_dump_VW_RESULT_HASIL_UJIAN" Method="cusp_repl_dump_VW_RESULT_HASIL_UJIAN">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_repl_dump_VW_DIFFERENT_IN_EXAM_DATE" Method="cusp_repl_dump_VW_DIFFERENT_IN_EXAM_DATE">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.Analyze_UserAnswer_EssayType" Method="Analyze_UserAnswer_EssayType" IsComposable="true">
+    <Parameter Name="JENIS_SOAL" Parameter="jENIS_SOAL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PARTICIPANT_NRP" Parameter="pARTICIPANT_NRP" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MODULE_ID" Parameter="mODULE_ID" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="EVENT_ID" Parameter="eVENT_ID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="REGISTRATION_ID" Parameter="rEGISTRATION_ID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Analyze_UserAnswer_EssayTypeResult">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_COUNT_BY_SYS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COUNT_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TOT_VALUE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WEIGHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AFTER_WEIGHTING" Type="System.Decimal" DbType="Decimal(6,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_save_log_swich_asesor" Method="cusp_save_log_swich_asesor">
+    <Parameter Name="NRP_ASESOR" Parameter="nRP_ASESOR" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="NRP_KARYAWAN" Parameter="nRP_KARYAWAN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RECORD_ID" Parameter="rECORD_ID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CORRECTION_PID" Parameter="cORRECTION_PID" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CREATE_BY" Parameter="cREATE_BY" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.UpdateCorrection_onfailed" Method="UpdateCorrection_onfailed">
+    <Parameter Name="CORRECTION_PID" Parameter="cORRECTION_PID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cufn_get_soal_essay_dikoreksi" Method="cufn_get_soal_essay_dikoreksi" IsComposable="true">
+    <Parameter Name="STUDENT_ID" Parameter="sTUDENT_ID" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="QUESTION_TYPE" Parameter="qUESTION_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REGISTRATION_ID" Parameter="rEGISTRATION_ID" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="cufn_get_soal_essay_dikoreksiResult">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOAL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="KEYANSWER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NILAI" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cufn_get_historical_answer_pilgan" Method="cufn_get_historical_answer_pilgan" IsComposable="true">
+    <Parameter Name="STUDENT_ID" Parameter="sTUDENT_ID" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="REGISTER_ID" Parameter="rEGISTER_ID" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="jenis_soal" Type="System.Int32" DbType="Int" />
+    <ElementType Name="cufn_get_historical_answer_pilganResult">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PERTANYAAN" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="JAWABAN_USER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="STATUS_DES" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="JAWABAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="EnchOcel.cusp_dumping_belum_selesai_ujian" Method="cusp_dumping_belum_selesai_ujian">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cusp_dumping_ellipse_to_apps" Method="cusp_dumping_ellipse_to_apps" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="EnchOcel.cusp_ModuleSetting" Method="cusp_ModuleSetting">
+    <Parameter Name="v_MODULE_ID" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="n_QUESTION_TYPE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="n_PRIORITY" Type="System.Int32" DbType="Int" />
+    <Parameter Name="n_QUESTION_EACH" Type="System.Int32" DbType="Int" />
+    <Parameter Name="n_PASSING_GRADE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="v_CMD" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="EnchOcel.cufn_t_transaction_w_AppPositioncode" Method="cufn_t_transaction_w_AppPositioncode" IsComposable="true">
+    <Parameter Name="QT" Parameter="qT" Type="System.Int32" DbType="Int" />
+    <Parameter Name="JS" Parameter="jS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PCODE" Parameter="pCODE" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="cufn_t_transaction_w_AppPositioncodeResult">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="EGI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EXAM_LOCATIONS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

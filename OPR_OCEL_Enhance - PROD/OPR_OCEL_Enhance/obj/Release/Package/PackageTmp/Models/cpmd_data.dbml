@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_ONLINE_EXAM_OCEL" Class="cpmd_dataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=jiepsqco413;Initial Catalog=DB_ONLINE_EXAM_OCEL;Persist Security Info=True;User ID=ocel_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_ONLINE_EXAM_OCELConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="cpmd.TBL_M_READING_TASK" Member="TBL_M_READING_TASKs">
+    <Type Name="TBL_M_READING_TASK">
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGN_DIV" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGN_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.TBL_R_HANDBOOK_CPMD" Member="TBL_R_HANDBOOK_CPMDs">
+    <Type Name="TBL_R_HANDBOOK_CPMD">
+      <Column Name="HANDBOOK_PID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="COMPETENCY_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FILE_PATH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FILE_NAME" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CREATED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CREATED_BY" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MODIF_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MODIF_BY" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.TBL_T_READING_REGISTRATION" Member="TBL_T_READING_REGISTRATIONs">
+    <Type Name="TBL_T_READING_REGISTRATION">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUB_MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_SELF_ASSESMENT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EVENT_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STATUS_READY_EXAM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="IS_LOCKED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.VW_TASKLIST_DETAIL" Member="VW_TASKLIST_DETAILs">
+    <Type Name="VW_TASKLIST_DETAIL">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="STEP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LOCKED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.TBL_T_USER_ANSWER" Member="TBL_T_USER_ANSWERs">
+    <Type Name="TBL_T_USER_ANSWER">
+      <Column Name="[_NO]" Member="_NO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QA_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.TBL_R_COMPETENCY" Member="TBL_R_COMPETENCies">
+    <Type Name="TBL_R_COMPETENCY">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="STEP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LAST_COMPETENCY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SI_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.VW_R_MODULE" Member="VW_R_MODULEs">
+    <Type Name="VW_R_MODULE">
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.TBL_R_MODULE_CLASS" Member="TBL_R_MODULE_CLASSes">
+    <Type Name="TBL_R_MODULE_CLASS">
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IS_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.VW_R_SUB_MODULE" Member="VW_R_SUB_MODULEs">
+    <Type Name="VW_R_SUB_MODULE">
+      <Column Name="MODULE_SUB_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="STEP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LAST_COMPETENCY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SI_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="cpmd.VW_T_READING_REPORT" Member="VW_T_READING_REPORTs">
+    <Type Name="VW_T_READING_REPORT">
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DEPARTEMENT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIVISION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="ocel.VW_T_MODULE_SET" Member="VW_T_MODULE_SETs">
+    <Type Name="VW_T_MODULE_SET">
+      <Column Name="T_PID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PRIORITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="create_by" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_EACH_COMPETENCY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PASSING_GRADE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="cpmd.GetMyTaskList" Method="GetMyTaskList" IsComposable="true">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(12)" />
+    <ElementType Name="GetMyTaskListResult">
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_ID" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ASSIGN_DIV" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="ASSIGN_DATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TASK_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="J_UNLOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TASK_STATUS" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="BTN_ENABLER" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="cpmd.cufn_get_taskList_detail" Method="cufn_get_taskList_detail" IsComposable="true">
+    <Parameter Name="NRP" Parameter="nRP" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="TASK_ID" Parameter="tASK_ID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="cufn_get_taskList_detailResult">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="STEP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LOCKED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPORT_LINK" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="cpmd.cusp_updateReadingExamToReady" Method="cusp_updateReadingExamToReady">
+    <Parameter Name="record_id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="task_id" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="competency_id" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="student_id" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="is_last_reading" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="cpmd.cusp_generate_soal_acak" Method="cusp_generate_soal_acak">
+    <Parameter Name="TASK_ID" Parameter="tASK_ID" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="NRP_EMP" Parameter="nRP_EMP" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="cusp_generate_soal_acakResult">
+      <Column Name="QA_ID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REGISTRATION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NRP" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTION_ID" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER_USER" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="cpmd.cufn_get_list_detail" Method="cufn_get_list_detail" IsComposable="true">
+    <Parameter Name="record_id" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="cufn_get_list_detailResult">
+      <Column Name="RECORD_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASK_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STUDENT_ID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION_DESC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NUMBER_OF_QUESTION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DURATION_MINUTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PASSING_GRADE_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RANDOMIZED_ANSWER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REGISTRATION_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EXAM_ACTUAL_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="EXAM_LOGIN_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_FINISH_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_COMP_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EXAM_STATUS" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EXAM_SCORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PERCENT_COMPLETE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="REMINDING_TIME" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UPDATE_REMINDING_TIME" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXAM_START_DATE" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="QUESTION_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JENIS_SOAL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUB_MODULE_ID" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EXAM_TYPE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IS_LOCKED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MODULE_NAME" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="ocel.cusp_Module" Method="cusp_Module">
+    <Parameter Name="v_MODULE_NAME" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="v_CMD" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="ocel.cusp_Submodule" Method="cusp_Submodule">
+    <Parameter Name="v_MODULE_SUB_NAME" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="v_MODULE_ID" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="v_CMD" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

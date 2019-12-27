@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Administrasi Mapping Pengguna";
+    ViewBag.dashboard = "Administrasi";
+    ViewBag.dashboardSmall = "Mapping Data Pengguna";
+    Layout = "~/Views/Shared/_layoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<style>
+    #GridRecipient table tr td {
+        padding: 2px;
+    }
+
+    #GridRecipientAdd table tr td {
+        padding: 2px;
+    }
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<button type="button" class="btn btn-primary" onclick="showPopup()"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Tambah Pengguna</button>
+<br /> <br />
+<div id="grid"></div>
+
+<script>
+	function showPopup(){
+		window.location="@ViewBag.pathParent/AddUser";
+	}
+</script>
+<script type="text/javascript" src="@ViewBag.pathParent/js/MappingUser.js"></script>

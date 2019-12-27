@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Adminsitration | Setting Profile User";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Administration";
+    ViewBag.dashboardSmall = "Setting Hak Akses User";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div class="row">
+    <div class="col-md-4">
+        <a href="@ViewBag.pathParent/SettingUser/ApplicationUser"><button type="button" class="btn btn-sm"><i class="fa fa-user"></i> Tambah User Aplikasi</button></a>
+        <br /><br />
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pengaturan Posisi</h5>
+                <br />  
+
+                <div class="form-group">
+                    <label for="drp_posisi">Pengguna Aplikasi</label><br />
+                    <select id="drp_posisi" data-width="100%">
+                        <option disabled selected>Pilih Posisi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="drp_item">Akses Item yang didapatkan</label><br />
+                    <select id="drp_item" data-width="100%">
+                        <option disabled selected>Pilih Item Menu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="drp_subitem">Akses Sub Item yang didapatkan</label><br />
+                    <select id="drp_subitem" class="selectpicker" data-width="100%" multiple>
+                        <option disabled id="opt_dead">Not Have Value</option>
+                    </select>
+                </div>
+                <button type="button" id="btn_act_save" class="btn btn-primary btn-block">Submit Akses</button>
+                <button type="reset" id="btn_act_cancel" class="btn btn-warning btn-block">Reset Input</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div>
+            <button id="keterangan" class="btn btn-facebook btn-sm" data-clipboard-text="1"><i class="fa fa-info" aria-hidden="true"></i> Keterangaan Item</button>
+        </div>
+        <br /> 
+        <div id="griduser_permit">
+
+        </div>
+    </div>
+    <div id="my-content" style="display:none;width:50%">
+        <div class="stackbox-header">
+            <i class="fa fa-info" aria-hidden="true"></i> 
+            Keterangan ID Menu
+        </div>
+        <div class="stackbox-body">
+            <div class="table-responsive">
+                <table id="tbl_keterangan" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="row">Kode Item</th>
+                            <th>Nama Item</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/SettingUserPermit.js"></script>

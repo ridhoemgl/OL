@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Materi | Dokumen Materi";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Materi";
+    ViewBag.dashboardSmall = "Dokumen Materi";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<style>
+    #listview-context-menu {
+        padding: 0;
+        margin-bottom: -1px;
+        min-height: 300px;
+    }
+
+    .k-listview:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    #md_edit .modal-dialog {
+        -webkit-transform: translate(0,-50%);
+        -o-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+        top: 50%;
+        margin: 0 auto;
+    }
+</style>
+<div id="rootviews">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div id="grid_exampbook">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="md_pdf_preview">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div id="pdf_review">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="menu">
+        <li id="read">
+            <i class="fa fa-book" aria-hidden="true"></i>  Read
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/ListMateriExam.js"></script>

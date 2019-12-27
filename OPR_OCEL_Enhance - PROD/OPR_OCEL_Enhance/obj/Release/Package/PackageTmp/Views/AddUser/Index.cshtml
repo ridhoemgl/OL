@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Administrasi Tambah Pengguna";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Administrasi";
+    ViewBag.dashboardSmall = "Tambah Pengguna";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<h2>Tambah Pengguna</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+                <table>
+                    <tr>
+                        <td>NRP</td>
+                        <td>
+                            <input type="text" class="form-control" value="" disabled id="nrpId" />
+                        </td>
+                        <td>
+                            <input type="button" class="btn btn-default form-control" value="--" onclick="showPopup()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GP</td>
+                        <td colspan="2">
+                            @Html.DropDownList("profileID", (IEnumerable<SelectListItem>)ViewBag.profile, new { @class = "dropdown form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DISTRIK</td>
+                        <td colspan="2">
+                            @Html.DropDownList("distrikId", (IEnumerable<SelectListItem>)ViewBag.ditrik, new { @class = "dropdown form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <button type='button' class='btn btn-primary' onclick="insert()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Tambah</button>
+                            <input type='button' class='btn' value='Kembali' onclick='back()' />
+                        </td>
+                    </tr>
+                </table>
+
+                @*<div class="form-horizontal">
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-xs-12">
+                                <label class="col-md-3 col-xs-12">NRP</label>
+                                <div class="col-md-3 col-xs-12">
+                                    <input type="text" class="form-control" value="" disabled id="nrpId" style="width:70%" />&nbsp; &nbsp;
+                                    <input type="button" class="btn btn-primary" value="--" onclick="showPopup()" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-xs-12">
+                                <label class="col-md-3 col-xs-12">GP</label>
+                                <div class="col-md-3 col-xs-12">
+                                    @Html.DropDownList("profileID", (IEnumerable<SelectListItem>)ViewBag.profile, "[Select]", new { onchange = "profileChange(this)", @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-xs-12">
+                                <label class="col-md-3 col-xs-12">DISTRIK</label>
+                                <div class="col-md-3 col-xs-12">
+                                    <select id="distrikId" name="distrikId" class="form-control" onchange="distrkChange(this)"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-xs-12">
+                                <label class="col-md-3 col-xs-12"></label>
+                                <div class="col-md-3 col-xs-12">
+                                    <input type='button' id="btnInsert" class="btn btn-primary" value='Insert' onclick="insert()" />
+                                    <input type='button' class='btn' value='Back' onclick='back()' />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>*@
+
+                <div id="wnd_addUser">
+                    <div id="grid"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function back() {
+        window.location = "@ViewBag.pathParent/MappingUser";
+    }
+</script>
+<script type="text/javascript" src="@ViewBag.pathParent/js/AddUser.js"></script>

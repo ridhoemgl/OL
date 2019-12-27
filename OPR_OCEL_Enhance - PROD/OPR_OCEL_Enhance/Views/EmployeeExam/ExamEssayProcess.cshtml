@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Exam | Ujian";
+    Layout = "~/Views/Shared/_LayoutMasterPeserta.cshtml";
+}
+
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.SetURL" />
+<input type="hidden" id="h_txt_nrp" name="h_txt_nrp" value="@ViewBag.NRP" />
+<input type="hidden" id="h_txt_dstrtc" name="h_txt_dstrtc" value="@ViewBag.DSTRTC" />
+<input type="hidden" id="h_txt_RegistrationID" name="h_txt_RegistrationID" value="@ViewBag.REGISTERID" />
+<input type="hidden" id="h_txt_ExamTYpe" name="h_txt_ExamTYpe" value="@ViewBag.JENIS_UJIAN" />
+<input type="hidden" id="h_txt_RemindingTime" name="h_txt_RemindingTime" value="@ViewBag.Time" />
+<input type="hidden" id="h_txt_QuestionType" name="h_txt_QuestionType" value="@ViewBag.SoalType" />
+<input type="hidden" id="h_txt_Percentagee" name="h_txt_Percentagee" value="@ViewBag.Complete" />
+<input type="hidden" id="h_txt_durationMinutes" name="h_txt_durationMinutes" value="@ViewBag.TimeNormal" />
+<input type="hidden" id="h_txt_record_id" name="h_txt_record_id" value="@ViewBag.RECORD_ID" />
+<input type="hidden" id="h_txt_time_nOrmal" name="h_txt_time_nOrmal" value="@ViewBag.TimerOnSecond" />
+<input type="hidden" id="h_txt_EVENT_ID" name="h_txt_EVENT_ID" value="@ViewBag.EVENT_ID" />
+<input type="hidden" id="h_txt_QA_ID" />
+<style>
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: 0px 15px; /* adjust here */
+        margin-bottom: 2px;
+        border: 1px solid #ddd;
+        line-height: 2em;
+        font-size: 10px;
+    }
+
+    .Size13 {
+        font-size: 13px;
+    }
+
+    .form-radio {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        display: inline-block;
+        position: relative;
+        background-color: #f1f1f1;
+        color: #666;
+        top: 3px;
+        height: 15px;
+        width: 15px;
+        border: 0;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-right: 10px;
+        outline: none;
+    }
+
+        .form-radio:checked::before {
+            position: absolute;
+            font: 13px/1 'Open Sans', sans-serif;
+            left: 5px;
+            top: 1px;
+            content: '\02143';
+            transform: rotate(40deg);
+        }
+
+        .form-radio:hover {
+            background-color: #f7f7f7;
+        }
+
+        .form-radio:checked {
+            background-color: #f1f1f1;
+        }
+
+    input[type][disabled] {
+        background-color: #f9f9f9;
+        color: #ddd;
+        cursor: default;
+    }
+
+        input[type][disabled] + label {
+            color: #999;
+            cursor: default;
+        }
+
+
+    label {
+        font: 300 14px/1.7 'Open Sans', sans-serif;
+        color: #666;
+        cursor: pointer;
+    }
+</style>
+<div class="row">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-4">
+                <!--ISi dengan konten Ya-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body card-block-big">
+                        <h5 id="lbl_pertanyaan_no"></h5>
+                        <p id="lbl_question_content" class="p-0"></p>
+                        <hr />
+                        <div class="form-group">
+                            <h5><b>Jawaban</b></h5>
+                            <textarea class="form-control" rows="5" id="answer1"></textarea>
+                        </div>
+
+                        <hr />
+                        <a href="#" class="btn btn-warning btn-sm" id="btn_back_question"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-info btn-sm" id="btn_confirm_exam">Konfirmasi</a>
+                        <a href="#" class="btn btn-success btn-sm" id="btn_next_question"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-primary btn-sm pull-right" id="btn_submit" hidden><i class="fa fa-floppy-o" aria-hidden="true"></i> Submit Ujian</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5>Informasi</h5>
+                Total Soal : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-success"  id="lbl_total_soal"></span><br />
+                Sudah Dijawab : <span class="badge badge-primary" id="lbl_dijawab"></span>
+                <hr />
+                <div class="progress md-progress">
+                    <div class="progress-bar bg-primary" id="progress_jawab" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <hr />
+                <div>Waktu Ujian Tersisa <b><span id="time">0</span> Menit</b></div>
+                <progress value="0" id="progressBar" max="@ViewBag.TimerOnSecond" style="width:100%"></progress>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fa fa-pencil" aria-hidden="true"></i> List Pertanyaan</h5>
+            </div>
+            <ul class="list-group list-group-flush" id="Ul_listQuestion"></ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div id="div_button_status"></div>
+</div>
+<script src="@ViewBag.SetURLt/ContentLayout/notify/bootstrap-notify.js"></script>
+<script src="@ViewBag.SetURL/Js/User/ExamEssay.js"></script>
+

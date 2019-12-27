@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Administrasi | User Aplikasi";
+    ViewBag.dashboard = "Administrasi";
+    ViewBag.dashboardSmall = "User Aplikasi";
+    Layout = "~/Views/Shared/_layoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+
+<style>
+    #GridRecipient table tr td {
+        padding: 2px;
+    }
+
+    #GridRecipientAdd table tr td {
+        padding: 2px;
+    }
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<br /> <br />
+<div id="grid"></div>
+
+<script>
+	function showPopup(){
+		window.location="@ViewBag.pathParent/AddUser";
+	}
+</script>
+<script type="text/javascript" src="@ViewBag.pathParent/js/UserApplication.js"></script>

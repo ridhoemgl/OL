@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Master Kompetensil Ujian";
+    ViewBag.dashboard = "Master";
+    ViewBag.dashboardSmall = "Kompetensil Ujian";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="gridSubVersatility"></div>
+
+<div id="wnd_editor">
+    <input type="text" id="txt_pid" hidden />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Kompetensil Name</div>
+        <div class="col-md-3"><input type="text" id="txt_moduleSub" class="k-textbox"/></div>
+        <div class="col-md-3"><input type="text" id="txt_moduleExist" style="border:double;"/></div>
+        <input type="text" id="txt_idmoduleExist" hidden />
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="margin-left : 20px;">Module Name</div>
+        <div class="col-md-3"><input type="text" id="txt_moduleName"/></div>
+    </div>
+    <hr />
+    <div class="row" style="justify-content: center;">
+        <button id="btn_save" class="k-button" style="margin:10px;"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save</button>
+        <button id="btn_cancel" class="k-button" style="margin:10px;"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/MasterSubVersatility.js"></script>

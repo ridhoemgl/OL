@@ -1,0 +1,184 @@
+﻿/* Created by       : Supardi, Agustyan, Arighi, Amar
+    project         : Risk register
+    created date    : 04/09/2014 */
+
+body,li a,li {
+    font-size:11px;
+}
+
+.button1{
+    padding-left:50px;
+}
+
+.me-menu-span{
+	margin-left:10px;
+}
+
+/*.k-textbox{
+	margin:0 0 10px 10px !important;
+}*/
+
+/*.k-widget.k-window {
+    width: 500px;
+    height: 500px;
+}*/
+
+.multiselect {
+    font-size:11px !important;
+}
+
+/*.k-edit-form-container{
+	width: 470px;
+    /*height: 470px;*/
+}*/
+
+.k-textbox-custom {
+    width: 100% !important;
+}
+
+#multi_select_APD_CODE .k-dropdown {
+    width: 325px !important;
+}
+
+.me-btn {
+	height:20px !important;
+	padding-top:0px;
+}
+
+#mdlRecipient{
+	height:600px !important;
+	width:800px !important;
+}
+
+
+.form-control {
+        font-size: 11px !important;
+        padding: 5px !important;
+        height: 25px !important;
+        /*background-color: #fcfcfc; */
+}
+
+.k-textbox-custom, .k-textbox-custom * {
+    width: 100%;
+}
+
+/*.panel-body {
+    padding-right:50px;
+}*/
+
+.table-bordered{
+    table-layout: fixed;
+}
+.breadcrumb-custom .active a {
+    background: #367fa9;
+}
+
+.breadcrumb-custom .active a:after {
+    content: " ";
+    display: block;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #367fa9;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+.breadcrumb-custom .active a:before {
+    content: " ";
+    display: block;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+
+.breadcrumb-custom {
+    width: 100%;
+    list-style: none;
+    overflow:hidden;
+    display: inline-table;
+    margin-left: 30px;
+    padding: 0px;
+}
+.breadcrumb-custom li {
+    display: inline;
+}
+.breadcrumb-custom li a {
+    padding-left: 10px;
+    color: white;
+    float: left;
+    text-decoration: none;
+    padding: 10px 10px 10px 80px;
+    margin: 0 10px 0 0;
+    background: #808080;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.breadcrumb-custom li a:after {
+    content: " ";
+    display: block;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #808080;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 100%;
+    z-index: 2;
+}
+.breadcrumb-custom li a:before {
+    content: " ";
+    display: block;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+.breadcrumb-custom li:first-child a {
+    padding-left: 50px;
+}
+.breadcrumb-custom li:last-child a {
+    padding-right: 40px;
+}
+
+/* NO BORDER KENDO GRID */
+
+.gridUjianPemahaman, .gridUjianPemahaman * {
+    background: none !important;
+    border: none !important;
+}
+
+.gridUjianPilGan, .gridUjianPilGan * {
+    background: none !important;
+    border: none !important;
+}
+
+.gridUjianInspeksi, .gridUjianInspeksi * {
+    background: #fff !important;
+    border: none !important;
+}
+
+.count_time {
+    font-size: large;
+}
+
+#wnd_add {
+    padding: 1em 0;
+}
+
+#wnd_update {
+    padding: 1em 0;
+}

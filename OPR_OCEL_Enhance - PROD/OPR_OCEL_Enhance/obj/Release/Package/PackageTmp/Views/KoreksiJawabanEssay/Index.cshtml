@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Monitor Ujian | Permintaan Koreksi";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Monitor Ujian";
+    ViewBag.dashboardSmall = "Permintaan Koreksi";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="div_request">
+    <div id="gridRequest">
+
+    </div>
+</div>
+
+
+<div class="col-md-12" id="skorjawaban" style="width: 100%; display:none">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Skor Penilaian Dalam Range 1 - <label id="LBL_MAXSCORE"></label></h5>
+        </div>
+        <div class="col-md-4">
+            <!--ISi dengan konten Ya-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+       <div id="div_tampung_soal">
+
+       </div>
+       <a href="#" id="back_to"><i class="fa fa-arrow-left" aria-hidden="true"></i>  Kembali</a>
+       <a href="javascript:void(0)" class="btn btn-primary btn-md pull-right" id="btn_submit"><i class="fa fa-floppy-o" aria-hidden="true"></i>Submit</a>
+       </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/KoreksiJawabanEssay.js"></script>
+

@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Analisa Kualitas Soal | Ringkasan";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Analisa Kualitas Soal";
+    ViewBag.dashboardSmall = "Ringkasan";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.baseurl" />
+<div class="row">
+    <div class="col-lg-10">
+        <h4>General Information</h4>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>Jumlah Pertanyaan</td>
+                    <td>Total Load by System</td>
+                    <td>Load By Sistem</td>
+                    <td>Dijawab Benar</td>
+                    <td>% ACH Benar</td>
+                    <td>Dijawab Salah</td>
+                    <td>% ACH Salah</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in ViewBag.dataumum)
+                {
+                    <tr>
+                        <td id="QUESTION_COUNT">@data.QUESTION_COUNT</td>
+                        <td id="TOTAL_LOAD_BY_SYS">@data.TOTAL_LOAD_BY_SYS</td>
+                        <td id="LOAD_BY_SYS">@data.LOAD_BY_SYS</td>
+                        <td>@data.TRUE_ANSWER</td>
+                        <td id="ACH_TRUE">@data.ACH_TRUE</td>
+                        <td>@data.FALSE_ANSWER</td>
+                        <td id="ACH_FALSE">@data.ACH_FALSE</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 text-center">
+        <div id="chart_a" style="height: 130px; width: 100%;">
+
+        </div>
+    </div>
+    <div class="col-lg-4 text-center">
+        <div id="chart_b" style="height: 130px; width: 100%;">
+
+        </div>
+    </div>
+</div>
+<div class="row" id="filter" style="margin-top:5%">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_MODUL"><i class="fa fa-list-ol" aria-hidden="true"></i> Pilih Modul Soal</label>
+            <select id="S_MODUL" class="select2" data-width="100%">
+                <option disabled selected>Pilih Modul</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_SUBMODUL">Pilih Kompetensi Soal</label>
+            <select id="S_SUBMODUL" class="select2">
+                <option value="0" selected>Tampilkan Semua</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="EXAM_TYPE">Pilih Jenis Ujian</label>
+            <select id="EXAM_TYPE" class="select2">
+            </select>
+        </div>
+    </div>
+    @*<div class="col-md-3">
+        <div class="form-group">
+            <label for="S_TYPEJAWABAN"><i class="fa fa-tag" aria-hidden="true"></i> Pilih Jenis Jawab</label>
+            <select id="S_TYPEJAWABAN" class="select2">
+                <option disabled selected>Pilih Jenis Jawaban</option>
+                <option value="-1">Jawaban Benar / Salah</option>
+                <option value="0">Jawaban Salah</option>
+                <option value="1">Jawaban Benar</option>
+            </select>
+        </div>
+    </div>*@
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="S_CERT">&nbsp;</label>
+            <button type="button" id="btn_view" class="btn btn-default btn-md"><i class="fa fa-search"></i> SEARCH &amp; ANALYZE</button>
+        </div>
+    </div>
+</div>
+<div class="row" style="height: 230px">
+    <div class="col-lg-12" hidden id="chart_capaian_soal" style="margin: 0px auto;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="d_result" hidden style="padding-left:3%">
+            <table class="ui celled table" style="width:100%" id="tbl_yay">
+                <thead>
+                    <tr class="table-success">
+                        <td scope="col">No.</td>
+                        <td scope="col">Pertanyaan</td>
+                        <td scope="col">Kompetensi</td>
+                        <td scope="col">Dijawab Benar</td>
+                        <td scope="col" class="text-center">Dimuat Sistem</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+    <!--Data Tables-->
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/datatables.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/dataTables.rowGroup.min.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/dataTablesemantic.min.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/ContentLayout/js/semantic.min.js"></script>
+<script type="text/javascript" src="@ViewBag.baseurl/Js/ResultAnalisaKualitasSoal.js"></script>

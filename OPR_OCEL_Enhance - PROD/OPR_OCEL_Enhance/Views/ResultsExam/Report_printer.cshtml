@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Laporan Hasil Ujian</title>
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/a4page.css">
+    <link rel="shortcut icon" type="image/x-icon" href="@ViewBag.pathParent/img/titlebar_icons.ico" />
+</head>
+<body>
+    <input type="hidden" id="url" readonly value="@ViewBag.pathParent" />
+    <input type="hidden" readonly id="en_modul_id" value="@ViewBag.MOD" />
+    <input type="hidden" readonly id="en_reg" value="@ViewBag.REG" />
+
+    <div class="book">
+        <div class="page">
+            <div class="subpage">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width:15%"><img src="@ViewBag.pathParent/ContentLayout/icon/LOGO_PAMAPERSADA.png" height="70" width="70"></td>
+                        <td align="left" style="width:100%">
+                            <font size="1pt" style="font-family: 'Times New Roman'">
+                                <b>Pama Exam Learning</b><br>
+                                <b>Hasil Ujian Peserta</b>
+                            </font><br>
+                            <font size="1px" style="font-family: 'Times New Roman'"><b>Jakarta Industrial Estate Pulo Gadung, Jl. Rawagelam I No.9, RW.9, Jatinegara, Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930</b></font><br>
+                            <font size="1px" style="font-family: 'Times New Roman'">Telp (021) 4602015</font>
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+                @foreach (var head in ViewBag.Resultdata)
+                {
+                    <div style="text-align:center">
+                        <h4 class="text-center">KODE REGISTRASI : @ViewBag.REG</h4>
+                        <small>Tanggal Ujian : @ViewBag.TanggalUjan_mulai - @ViewBag.TanggalUjan_selesai</small>
+                    </div>
+                    
+                    <hr />
+                    <table style="height: 103px; width:auto; font-size:0.6em">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10%;"><b>Nama</b></td>
+                                <td style="width: 6.5%;">@head.NAME</td>
+                                <td style="width: 10%;"><b>Distrik</b></td>
+                                <td style="width: 6.5%;">@head.DSTRCT_CODE</td>
+                                <td style="width: 10%;"><b>Jenis Tes</b></td>
+                                <td style="width: 6.5%;">@head.JENIS_UJIAN_DESC</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;"><b>NRP</b></td>
+                                <td style="width: 6.5%;">@head.STUDENT_ID</td>
+                                <td style="width: 10%;"><b>NRP Sertifikator</b></td>
+                                <td style="width: 6.5%;">@head.CERTIFICATOR_ID</td>
+                                <td style="width: 10%;"><b>Sertifikator</b></td>
+                                <td style="width: 6.5%;">@head.CERTIFICATOR_NAME</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;"><b>EGI</b></td>
+                                <td style="width: 6.5%;">@head.EGI</td>
+                                <td style="width: 10%;"><b>Lokasi Tes</b></td>
+                                <td style="width: 6.5%;">@head.TEST_CENTER</td>
+                                <td style="width: 10%;"><b>Nilai Akhir</b></td>
+                                <td style="width: 6.5%;"><b>@head.RESULT_EXAM</b></td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="width: 10%;"><b>Golongan</b></td>
+                                <td style="width: 6.5%;">@head.GOLONGAN</td>
+                                <td style="width: 10%;background-color:lightyellow"><b>Unit Kompetensi</b></td>
+                                <td style="width: 6.5%;background-color:lightyellow" colspan="3">@head.UNIT_COMPETENCY</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                }
+                <hr />
+                <div id="detail_rport">
+
+                </div>
+                <br /><br />
+                @{ 
+                    if (@ViewBag.Conclution == "BERHASIL")
+                    {
+                        <h5>Kesimpulan : <label class="text-success">@ViewBag.Conclution</label></h5>
+                    }
+                    else
+                    {
+                        <h5>Kesimpulan : <label class="text-danger">@ViewBag.Conclution</label></h5>
+                    }
+                }
+                <button type="button" id="btn_pdf" class="btn btn-primary btn-md pull-right"> Save PDF / Print</button>
+            </div>
+        </div>
+    </div>
+    <script src="@ViewBag.pathParent/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="@ViewBag.pathParent/Js/ReportExamResult.js"></script>
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

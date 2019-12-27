@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>@ViewBag.Title</title>
+    @{
+        ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="CodedThemes">
+    <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="CodedThemes">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/bootstrap/css/bootstrap.min.css">
+    <!--Select2-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/select2.css">
+    <!---Data Tables-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/datatables.css">
+    <!--Material Checkbox and radiobutton-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/pure-css-checkbox.css">
+
+    <!---Modal FUllscreen-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/ModalFullScreen.css">
+    <!--SweetAlert-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/sweetalert2.css">
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/jquery-ui.css">
+    <!--JConfirm-->
+
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/jconfirm/jquery-confirm.css">
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/advan_ceckbox.css">
+    <!-- PDF viewer-->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/pdfviewer.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/icon/icofont/css/icofont.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/icon/font-awesome/css/font-awesome.min.css">
+    <!-- Stack Box -->
+    <link rel="shortcut icon" type="image/x-icon" href="@ViewBag.pathParent/img/titlebar_icons.ico" />
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/style.css">
+    <link rel="stylesheet" type="text/css" href="@ViewBag.pathParent/ContentLayout/css/select/bootstrap-select.min.css">
+
+    <link type="text/css" href="@ViewBag.pathParent/Kendo/css/kendo.default.min.css" rel="stylesheet" />
+    <link type="text/css" href="@ViewBag.pathParent/Kendo/css/kendo.common.min.css" rel="stylesheet" />
+    <link type="text/javascript" href="@ViewBag.pathParent/Kendo/js/jquery.min.js" rel="stylesheet" />
+    <link type="text/javascript" href="@ViewBag.pathParent/Kendo/js/jquery_ui.js" rel="stylesheet" />
+    <link type="text/javascript" href="@ViewBag.pathParent/Kendo/js/kendo.all.min.js" rel="stylesheet" />
+    <style>
+        .pdfobject-container {
+            height: 50rem;
+            border: 1rem solid rgba(0,0,0,.1);
+        }
+
+        .img_log_nav {
+            width: 90%;
+            height: 90%;
+            padding-left: inherit;
+        }
+    </style>
+    <!-- Required Jquery -->
+    @*<script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery/jquery.min.js"></script>*@
+    <script src="@ViewBag.pathParent/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="@ViewBag.pathParent/Kendo/js/kendo.all.min.js"></script>
+    <script src="@ViewBag.pathParent/Kendo/js/kendo.aspnetmvc.min.js"></script>
+
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+
+    <!-- classie js -->
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/classie/classie.js"></script>
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/select/bootstrap-select.js"></script>
+    <!--JConfirm-->
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jconfirm/jquery-confirm.js"></script>
+    <!-- Custom js -->
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/script.js"></script>
+    <!--Data Tables-->
+    <script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/datatables.js"></script>
+    <!--Other Script Template-->
+    <script src="@ViewBag.pathParent/ContentLayout/js/pcoded.min.js"></script>
+    <script src="@ViewBag.pathParent/ContentLayout/js/demo-12.js"></script>
+    <script src="@ViewBag.pathParent/ContentLayout/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="@ViewBag.pathParent/ContentLayout/js/select2.full.js"></script>
+    <script src="@ViewBag.pathParent/ContentLayout/js/sweetalert2/sweetalert2.js"></script>
+    <script src="@ViewBag.pathParent/ContentLayout/js/jquery.toast.js"></script>
+    <!--script src="@ViewBag.pathParent/ContentLayout/js/pdfobject.js"><script-->
+
+    <style type="text/css">
+        body {
+            font-size: 11px;
+        }
+          .nav-small {
+        }
+
+        #treeview a {
+            color: #306b65;
+            font-family: 'Open Sans',sans-serif !important;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        #treeview .k-sprite {
+            background-image: url("@ViewBag.pathParent/img/coloricons-sprite.png");
+        }
+
+        .rootfolder {
+            background-position: 0 0;
+        }
+
+        .folder {
+            background-position: 0 -16px;
+            /*background-image: url(/img/coloricons-sprite.png);*/
+        }
+
+        .pdf {
+            background-position: 0 -32px;
+        }
+
+        .html {
+            background-position: 0 -48px;
+        }
+
+        .image {
+            background-position: 0 -64px;
+        }
+
+        /*.theme-blue #header-navbar {
+            background-color: rgb(33, 33, 33) !important;
+        }
+
+        .theme-blue .navbar-brand {
+            background-color: rgb(33, 33, 33) !important;
+        }
+
+        .navbar-brand {
+            background-color: rgb(33, 33, 33) !important;
+        }*/
+
+        .k-grid-header .k-header {
+            text-align: center;
+        }
+
+        .nav-small {
+        }
+        .dataTables_wrapper {
+            font-size: 13px;
+            position: relative;
+            clear: both;
+            *zoom: 1;
+            zoom: 1;
+        }
+        .rootfolder {
+            background-position: 0 0;
+        }
+
+        .folder {
+            background-position: 0 -16px;
+            /*background-image: url(/img/coloricons-sprite.png);*/
+        }
+
+        .pdf {
+            background-position: 0 -32px;
+        }
+
+        .html {
+            background-position: 0 -48px;
+        }
+
+        .image {
+            background-position: 0 -64px;
+        }
+
+        .k-grid-header .k-header {
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a id="mobile-collapse" href="javascript:void(0)">
+                            <img class=" img-fluid img_log_nav" src="@ViewBag.pathParent/img/navigation-logo.png" alt="Certification-Logo" />
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a id="bars" href="javascript:void(0)"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-40 img-radius" src="@ViewBag.pathParent/img/default-avatar.png" alt="User-Profile-Image" style="border-radius: 50%;">
+                                    <div class="user-details">
+                                        @{
+                                            string namesValue = Session["Name"] == null ? "  " : Convert.ToString(Session["Name"]);
+                                            string[] names = namesValue.Split(' ');
+                                            Session["helloname"] = names[0] == null ? "" : names[0];
+                                        }
+                                        <span>Halo, @Session["helloname"]</span>
+                                        <span id="more-details">@Session["description"] - @Session["distrik"]<i class="ti-angle-down"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <li class="more-details">
+                                            <a href="@ViewBag.pathParent/Login/Profiles"><i class="ti-user"></i>Ganti Profil</a>
+                                            <a href="@ViewBag.pathParent/Login/Logout"><i class="ti-power-off"></i>Keluar</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigasi</div>
+                            <ul id="treeview" class="pcoded-item pcoded-left-item">
+                                @Html.Raw(ViewBag.leftMenu)
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-header start -->
+                                    <div class="row align-items-end" style="padding-bottom:20px">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                @*<i class="icofont icofont-layout bg-c-blue"></i>*@
+                                                <div class="d-inline">
+                                                    <h5>
+                                                        @ViewBag.dashboard
+                                                    <small>@ViewBag.dashboardSmall</small>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-body end -->
+
+                                    <div class="page-body" style="margin-top:0px">
+                                        <!-- Default color card start -->
+                                        <div class="card">
+                                            <div class="card-block" style="padding-bottom:30px!important">
+                                                @RenderBody()
+                                                <!-- end of eow -->
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- Main-body start -->
+
+                        <div id="styleSelector">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        //document.getElementById("bars").click();
+        $("#treeview").kendoTreeView({
+            animation: {
+                collapse: false
+            }
+        });
+
+        $('#mobile-collapse').click();
+        //$("#treeview").kendoTreeView({
+        //    animation: false
+        //});
+    });
+
+
+</script>
+

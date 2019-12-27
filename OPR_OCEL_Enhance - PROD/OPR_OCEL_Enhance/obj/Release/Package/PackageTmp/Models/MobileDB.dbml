@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_online_exam_ocel" Class="MobileDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=jiepmodb402;Initial Catalog=db_online_exam_ocel;Persist Security Info=True;User ID=ocel_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_online_exam_ocelConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="exam.tbl_t_answer" Member="tbl_t_answers">
+    <Type Name="tbl_t_answer">
+      <Column Name="[_no]" Member="_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="qa_id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="registration_id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nrp" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="question_id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="answer_user" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="score" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="jenis_soal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="exam.tbl_t_registration" Member="tbl_t_registrations">
+    <Type Name="tbl_t_registration">
+      <Column Name="record_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="registration_id" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="student_id" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="dstrct_code" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="egi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="department" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="position_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="position_desc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="number_of_question" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="duration_minute" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="passing_grade_percent" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="randomized_answer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_self_assesment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="registration_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="exam_actual_date" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="exam_login_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="exam_finish_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="exam_comp_id" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="exam_status" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="exam_score" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="event_id" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="release_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="release_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status_ready_exam" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="support_link" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="percent_complete" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="reminding_time" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="update_reminding_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="exam_start_date" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="question_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sub_module_id" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="exam_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="exam_locations" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.tbl_t_events" Member="tbl_t_events">
+    <Type Name="tbl_t_event">
+      <Column Name="event_id" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="test_center_id" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="certificator_id" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="long_description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="module_id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="module_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="exam_start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="exam_end" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="question_type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="create_by" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="update_by" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="jenis_ujian_code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="exam_target_min" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="exam.tbl_t_events_time_detail" Member="tbl_t_events_time_details">
+    <Type Name="tbl_t_events_time_detail">
+      <Column Name="code_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="event_id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="question_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="time_exam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="enchocel.tbl_r_handbook" Member="tbl_r_handbooks">
+    <Type Name="tbl_r_handbook">
+      <Column Name="handbook_pid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="module_id" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="file_path" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="egi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isactive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="modif_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="modif_by" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="exam.tbl_r_test_center" Member="tbl_r_test_centers">
+    <Type Name="tbl_r_test_center">
+      <Column Name="test_center_id" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="test_center_name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="facility_desc" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="check_capacity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="app_id" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="enchocel.vw_record_new" Member="vw_record_news">
+    <Type Name="vw_record_new">
+      <Column Name="record_id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

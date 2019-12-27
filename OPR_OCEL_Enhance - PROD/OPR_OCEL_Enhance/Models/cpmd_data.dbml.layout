@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="cpmd_data">
+  <DataContextMoniker Name="/cpmd_dataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0f6d3f8c-f563-434d-aabc-03013c23778a" isExpanded="false" absoluteBounds="0.5, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_M_READING_TASK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87a07331-d412-409e-b4d7-7fa39eec7e9e" absoluteBounds="0.51500000000000012, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33122dca-c475-46b2-aec8-96ef20adc9c8" isExpanded="false" absoluteBounds="0.5, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_R_HANDBOOK_CPMD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e92c1b1b-38c2-4aba-bdf6-55eb4ddc07e8" absoluteBounds="0.51499999999999968, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c870959c-e45c-41c8-ab0f-6e50e2401396" isExpanded="false" absoluteBounds="0.5, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_T_READING_REGISTRATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cde1088-8ca6-4cfb-83c0-815d704fa87b" absoluteBounds="0.51499999999999968, 3.335, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a3916a44-f07d-474d-8b37-ef5b2c8c6403" isExpanded="false" absoluteBounds="2.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/VW_TASKLIST_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9962d4a7-284b-472f-83b7-cc33fe61e4ec" absoluteBounds="2.7649999999999997, 2.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5fb2461e-61b5-42b4-ba4c-b39ba10c208b" isExpanded="false" absoluteBounds="0.5, 4.125, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_T_USER_ANSWER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d82c158-2c9c-4780-8686-5077c4f585d1" absoluteBounds="0.51500000000000057, 4.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b561358-1e6e-4666-89d5-fd94f5947cce" isExpanded="false" absoluteBounds="0.5, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_R_COMPETENCY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a616988-9328-41c0-a40d-f0c4d49f0bc4" absoluteBounds="0.51499999999999968, 2.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d883c1cf-9330-4923-8cf3-9f1afc7c49d6" isExpanded="false" absoluteBounds="2.75, 1, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/VW_R_MODULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6c323f8-073d-4ddb-8e93-e9b1abdffa3c" absoluteBounds="2.7649999999999997, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03c335a8-2255-43ee-964b-145d43c89444" isExpanded="false" absoluteBounds="0.5, 1, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_R_MODULE_CLASS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ced8220a-5055-4ded-b711-65e6fd114503" absoluteBounds="0.51499999999999968, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="017c26b3-5867-4346-b9c3-f6531f6d41ed" isExpanded="false" absoluteBounds="2.75, 1.625, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/VW_R_SUB_MODULE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f286cf85-4e03-4529-abe6-28e3430fa555" absoluteBounds="2.7649999999999997, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36bb9ead-bb4e-40b3-9133-7d0a67956f71" isExpanded="false" absoluteBounds="2.75, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/VW_T_READING_REPORT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87814964-ca04-4870-a365-a2dcc629088b" absoluteBounds="2.7649999999999997, 3.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e10ccd17-8245-43ac-8542-23d1f7d9a69c" isExpanded="false" absoluteBounds="0.5, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/TBL_MODULE_SET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="415054b5-22f9-4fd6-bb8b-9bb1aa2e9bfe" absoluteBounds="0.51499999999999968, 2.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da94d732-f04e-49c9-b306-abbd668848c9" isExpanded="false" absoluteBounds="2.75, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/cpmd_dataDataContext/VW_T_MODULE_SET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="659f2f4d-54eb-481e-b85b-0ad4873b1b46" absoluteBounds="2.7649999999999997, 3.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

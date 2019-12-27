@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<img src="@ViewBag.pathParent/ContentLayout/icon/Welcome_screen.png" style="max-width: 100%;max-height: 100%;" />
+<br />

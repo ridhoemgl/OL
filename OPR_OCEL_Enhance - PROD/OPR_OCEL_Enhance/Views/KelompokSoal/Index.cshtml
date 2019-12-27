@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Bank Soal | Kelompok Soal";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Bank Soal";
+    ViewBag.dashboardSmall = "Kelompok Soal";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<style>
+    .k-header .k-link {
+        text-align: center;
+    }
+</style>
+<div class="row">
+    <div class="col-md-1">
+        <label>Posisi</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtPosisi" style="width:250px;" />
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-1">
+        <label>Type Soal</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtTypeSoal" style="width:250px;" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-1">
+        <label>Module</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtModule" style="width:250px; background-color:#d5ebed" />
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-1">
+        <label>Jenis Ujian</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtJenisUjian" style="width:250px; background-color:#d5ebed" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-1">
+        <label>EGI</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" id="txtEgi" style="width:250px; background-color:#d5ebed" />
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <input type="button" id="idBtnView" class="k-button primary" value="View " onclick="viewData()" />
+    </div>
+</div>
+<br />
+<div id="grid"></div>
+
+<script type="text/javascript" src="@ViewBag.pathParent/Js/KelompokSoal.js"></script>

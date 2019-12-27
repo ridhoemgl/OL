@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Monitor Ujian | Record Jawaban";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.dashboard = "Monitor Ujian";
+    ViewBag.dashboardSmall = "Record Jawaban";
+}
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+<div class="row" id="filter">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_POS">Pilih Posisi</label>
+            <select id="S_POS" class="select2" data-width="100%">
+                <option disabled selected>Pilih Posisi..</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_TIPE">Pilih Jenis Ujian</label>
+            <select id="S_TIPE" class="select2">
+                <option disabled selected>Pilih Jenis Ujian..</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="S_QTYPE">Jenis Soal</label>
+            <select id="S_QTYPE" class="select2"></select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label for="S_CERT">&nbsp;</label>
+            <button type="button" id="btn_view" class="btn btn-success btn-md"><i class="fa fa-search"></i> SEARCH DATA</button>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-7">
+        <div id="grid_student">
+
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div id="tampilkan_hirtory">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@ViewBag.pathParent/ContentLayout/js/jquery.toast.js"></script>
+<script type="text/javascript" src="@ViewBag.pathParent/Js/RecordJawaban.js"></script>

@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Monitor Ujian | Peserta Ujian Online";
+    ViewBag.dashboard = "Monitor Ujian";
+    ViewBag.dashboardSmall = "Peserta Ujian Online";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+    ViewBag.pathParent = Url.Content("~").Substring(0, Url.Content("~").Length - 1);
+}
+<style>
+    .modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+</style>
+<input type="hidden" id="urlPath" name="urlPath" value="@ViewBag.pathParent" />
+
+<div id="wnd_add"></div>
+<div id="wnd_update"></div>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-md-12 col-xs-12">
+            <div id="myAlert" class="alert alert-success" style="display:none"></div>
+        </div>
+        <div class="col-md-12 col-xs-12"><br /></div>
+        <div class="col-md-12 col-xs-12">
+            <div id="gridPesertaUjian"></div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="modalUbahWaktu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-clock-o" aria-hidden="true"></i> Ubah Waktu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txt_RECORD_ID" />
+                <div class="row">
+                    <div class="col-md-7">
+                        Waktu Dari Sesi Ujian
+                    </div>
+                    <div class="col-md-4">
+                        <b><label id="lbl_sesi_time">0 Menit</label></b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        Waktu Tersisa Saat ini
+                    </div>
+                    <div class="col-md-4">
+                        <b><label id="lbl_sisa_waktu">0 Menit</label></b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        Ubah Waktu Menjadi <small>Menit</small>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="txt_changeTimes" class="form-control text-center" maxlength="2" required />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-success" id="btn_save_changetime">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+</div>
+@*<ul id="menu">
+    <li id="moretimes">
+        <i class="fa fa-clock-o" aria-hidden="true"></i> Tambah Waktu
+    </li>
+    <li class="k-separator"></li>
+    <li id="reset">
+        <i class="fa fa-spinner" aria-hidden="true"></i>  Reset
+    </li>
+    <li>
+        <i class="fa fa-spinner" aria-hidden="true"></i>  Aksi
+        <ul>
+            <li><i class="fa fa-times-circle" aria-hidden="true"></i> Hapus</li>
+            <li><i class="fa fa-info-circle" aria-hidden="true"></i> Detail</li>
+        </ul>
+    </li>
+
+</ul>*@
+<script type="text/javascript" src="@ViewBag.pathParent/Js/PesertaUjian.js"></script>
+
+<script id="tempIMG_PATH" type="text/x-kendo-tmpl">
+
+    # if (IMG_PATH == 0) { }
+    else { #
+    <center><img src="@ViewBag.pathParent#=IMG_PATH#" width="150" height="150" /></center>#
+    } #
+
+</script>
+
+<script id="tempIMG_PATH_thumbnail" type="text/x-kendo-tmpl">
+
+    # if (IMG_PATH == 0) { }
+    else { #
+    <center><img src="@ViewBag.pathParent#=IMG_PATH#" width="20" height="20" /></center>#
+    } #
+
+</script>
